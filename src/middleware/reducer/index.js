@@ -1,9 +1,9 @@
-import { GET_TALES, GET_INFO, GET_AVENTURAS, PRELOADER_STATE, PRELOADER} from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER} from '../../misc/consts';
 
 const initialState = {
     tales: [],
     detail: {},
-    aventuras: [],
+    adventures: [],
     preloader: true,
     preloaderState: 10,
 
@@ -21,10 +21,10 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 preloaderState: action.payload
             }
-        case GET_AVENTURAS:
+        case GET_ADVENTURES:
             return {
                 ...state,
-                aventuras: action.payload
+                adventures: action.payload
             }
         case GET_TALES:
             return {

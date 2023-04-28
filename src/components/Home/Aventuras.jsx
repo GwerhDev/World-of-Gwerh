@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import estilos from './css/Aventuras.module.css'
 import AudioPlayer from 'react-h5-audio-player';
 import { useSelector } from 'react-redux'
-import { useDispatch } from 'react-redux';
-import { preloader, preloaderState } from '../../middleware/actions';
 import ErrorAventuras from '../Errors/ErrorAventuras';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Aventuras = () => {
-    const aventuras = useSelector(state => state.aventuras)
+    const adventures = useSelector(state => state.adventures)
     const [url, setUrl] = useState('')
-    const dispatch = useDispatch()
 
     return (
         <div className='div_av'>    
@@ -18,24 +15,36 @@ const Aventuras = () => {
                 <p>Aventuras</p>
                 <><ul >
                     {
-                    aventuras.length>0? 
+                    adventures? 
                     (
-                        aventuras.map(e =>{
-                        return(
+                        adventures.map(e =>{
+                            return(
+                            e.name==='Ainulindalë'?
                             <li key={e.id}>
-                                <Link to={e.url}>
+                                <a href={e.url} target='_blank' rel='noreferrer'>
                                     <button className={estilos.btn}
                                         onMouseEnter={()=>setUrl("sound/btn-hover.mp3")}
                                         onClick={()=>{return (
-                                            dispatch(preloader(true)),
-                                            dispatch(preloaderState(10)),
                                             setUrl("sound/btn.mp3")
                                         )}}
                                             >
                                         {e.name} 
                                     </button>
-                                </Link>
+                                </a>
                             </li>
+                            :
+                            <li key={e.id}>
+                            <Link to={e.url}>
+                                <button className={estilos.btn}
+                                    onMouseEnter={()=>setUrl("sound/btn-hover.mp3")}
+                                    onClick={()=>{return (
+                                        setUrl("sound/btn.mp3")
+                                    )}}
+                                        >
+                                    {e.name} 
+                                </button>
+                            </Link>
+                        </li>
                         )
                     }))
                     : (<ErrorAventuras />)

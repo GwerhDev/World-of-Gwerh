@@ -2,7 +2,7 @@ export const PRELOADER = 'PRELOADER'
 export const PRELOADER_STATE = 'PRELOADER_STATE'
 export const GET_TALES = 'GET_TALES'
 export const GET_INFO = 'GET_INFO'
-export const GET_AVENTURAS = 'GET_AVENTURAS'
+export const GET_ADVENTURES = 'GET_ADVENTURES'
 export const LIST_IMAGES = [
     {
         home:

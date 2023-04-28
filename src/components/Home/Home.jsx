@@ -25,7 +25,7 @@ function Home() {
         <div className="home">
         <div id="preload-images"></div>
         {
-        (_server_.length===0)?
+        (_server_)?
             ( <><Preloader img={logo} /></> )
             :
         (_preloader_ ) ?

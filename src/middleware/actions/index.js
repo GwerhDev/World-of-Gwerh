@@ -1,9 +1,9 @@
-import { GET_TALES, GET_INFO, GET_AVENTURAS, PRELOADER_STATE, PRELOADER } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER } from '../../misc/consts';
 import { URL_API } from '../config';
 
 export function getTales() {
     return function(dispatch) {
-        fetch(`${URL_API}/wog`)
+        fetch(`${URL_API}/wog/tales`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
@@ -17,11 +17,11 @@ export function getTales() {
 
 export function getAventuras() {
     return function(dispatch) {
-        fetch(`${URL_API}/wog/aventuras`)
+        fetch(`${URL_API}/wog/adventures`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
-                type: GET_AVENTURAS,
+                type: GET_ADVENTURES,
                 payload: data,
             })
         })
