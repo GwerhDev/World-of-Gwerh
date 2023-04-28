@@ -1,0 +1,55 @@
+.title{
+  height: 50vh;
+  z-index: 9999999999999;
+  animation-name: flash;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.lotr{
+  width: 250px;
+  z-index: 0;
+  animation-name: rot;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes rot {
+  0%   {transform: rotate(0deg); scale: 1; opacity: 1;}
+  25%  {opacity: 0.5;}
+  50%  {scale: 1.5; opacity: 1;}
+  75%  {opacity: 0.5;}
+  100% {transform: rotate(-360deg); scale: 1; opacity: 1;}
+}
+
+@keyframes flash {
+  0%   {scale: 1;}
+  5%   {scale: 1.01;filter:brightness(2)}
+  10%  {filter:brightness(1);}
+  15%  {scale: 1;filter:brightness(1)}
+  35%  {filter:brightness(1);}
+  50%  {scale: 0.96;filter:brightness(2)}
+  75%  {filter:brightness(1)}
+  100% {scale: 1}
+}
+
+.div_lotr{
+  width: 99vw;
+  margin-top: 75px;
+}
+
+.div_title{
+  width: 99vw;
+  margin-top: 100px;
+  position: absolute;
+  z-index: 999;
+
+}
+
+.preloaderCont{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 255, 255, 0.538);
+}
