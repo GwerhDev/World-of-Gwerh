@@ -24,15 +24,6 @@ function Home() {
     return (
         <div className="home">
         <div id="preload-images"></div>
-        {
-        (_server_)?
-            ( <><Preloader img={logo} /></> )
-            :
-        (_preloader_ ) ?
-            ( <><Preloader img={logo} /></> )
-        :
-            ( null )
-        }
             <AudioPlayer 
             ref={player} id='main-theme' 
             showJumpControls={false}
@@ -60,6 +51,15 @@ function Home() {
                     </div>
                     <Opciones />
                 </div> 
+            {
+            (_server_)?
+                ( <><Preloader img={logo} /></> )
+                :
+            (_preloader_ ) ?
+                ( <><Preloader img={logo} /></> )
+                :
+                ( null )
+            }
             </div>
                 <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOn})`}} 
                 onClick={()=>{
