@@ -14,11 +14,8 @@ function App() {
             <Route exact path='/'>
                 <Home /> 
             </Route>
-            <Route exact path='/adventures/gwerh-the-bard'>
+            <Route path='/adventures/gwerh-the-bard'>
               <GwerhTheBard />
-            </Route>
-            <Route exact path='/ainulindalë'>
-              <Ainulindalë />
             </Route>
           </Switch>
         <div className="icon">
