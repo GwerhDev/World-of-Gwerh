@@ -14,7 +14,7 @@ function App() {
             <Route exact path='/'>
                 <Home /> 
             </Route>
-            <Route exact path='/gwerh-the-bard'>
+            <Route exact path='/adventures/gwerh-the-bard'>
               <GwerhTheBard />
             </Route>
             <Route exact path='/ainulindalë'>
