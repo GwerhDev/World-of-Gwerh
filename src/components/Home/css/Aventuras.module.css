@@ -1,0 +1,83 @@
+.btn{
+    width: 250px;
+    height: 30px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000a0;
+    background-image: url(../../../design/btn-entrar.png);
+    background-position: center;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-radius: 30%;
+    z-index: 999;
+    margin-top: 10px;
+}
+
+.btn:hover{
+    background-image: url(../../../design/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;    
+}
+
+.out{
+    width: 250px;
+    height: 30px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000a0;
+    background-image: url(../../../design/btn-entrar.png);
+    background-position: center;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-radius: 30%;
+    z-index: 999;
+    margin-top: 70px;
+}
+
+.opt{
+    width: 250px;
+    height: 50px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    text-shadow: 2px 2px #000000a0;
+    background-image: url(../../../design/btn-entrar.png);
+    border: none;
+    z-index: 999;
+    margin-top: 30px;
+}
+
+.out:hover, .opt:hover {
+    background-image: url(../../../design/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;    
+}
+
+p{
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 2px 2px #000000a0;
+    border: none;
+    z-index: 999;
+
+}
+.aventuras_body{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url(../../../design/background-div-aventuras.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}

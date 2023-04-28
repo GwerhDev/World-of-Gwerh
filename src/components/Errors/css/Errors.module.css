@@ -1,0 +1,35 @@
+.btn{
+    width: 250px;
+    height: 30px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000a0;
+    background-color: #767676;
+    background-position: center;
+    border-color: rgb(162, 162, 162);
+    border-width: 2px;
+    border-radius: 30%;
+    z-index: 999;
+    margin-top: 10px;
+}
+
+.err{
+    width: 100vw;
+}
+
+.btn:hover{
+    cursor: context-menu;
+}
+
+p{
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 2px 2px #000000a0;
+    border: none;
+    z-index: 999;
+
+}

@@ -1,0 +1,23 @@
+.opt{
+    width: 250px;
+    height: 30px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000a0;
+    background-image: url(../../../design/btn-entrar.png);
+    background-position: center;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-radius: 30%;
+    z-index: 999;
+    margin-top: 70px;
+}
+.opt:hover {
+    background-image: url(../../../design/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;    
+}

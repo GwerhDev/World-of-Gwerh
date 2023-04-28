@@ -1,0 +1,58 @@
+import { GET_TALES, GET_INFO, GET_AVENTURAS, PRELOADER_STATE, PRELOADER } from '../../misc/consts';
+import { URL_API } from '../config';
+
+export function getTales() {
+    return function(dispatch) {
+        fetch(`${URL_API}/wog`)
+        .then(res => res.json())
+        .then(data =>{
+            dispatch({
+                type: GET_TALES,
+                payload: data,
+            })
+        })
+        .catch(e => console.log(e))
+    }
+}
+
+export function getAventuras() {
+    return function(dispatch) {
+        fetch(`${URL_API}/wog/aventuras`)
+        .then(res => res.json())
+        .then(data =>{
+            dispatch({
+                type: GET_AVENTURAS,
+                payload: data,
+            })
+        })
+        .catch(e => console.log(e))
+    }
+}
+
+export function getInfo(id) { 
+    return function(dispatch){
+        fetch(`${URL_API}/wog/${id}`)
+        .then(res => res.json())
+        .then(data =>{
+            dispatch({
+                type: GET_INFO,
+                payload: data
+            })
+        })
+        .catch(e => console.log(e))
+    }
+
+}
+
+export function preloader(e){
+    return {
+        type: PRELOADER,
+        payload: e
+    }
+}
+export function preloaderState(e){
+    return {
+        type: PRELOADER_STATE,
+        payload: e
+    }
+}

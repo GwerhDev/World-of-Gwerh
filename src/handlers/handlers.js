@@ -1,0 +1,295 @@
+/*----------- HOME -------------*/
+
+//Enter
+
+export function handlerBtnOnClick(f,e,d){
+    f(e)
+    if(d==='Aventuras'){
+        document.querySelector('.enter_body').style.transitionDuration="1s"
+        document.querySelector('.enter_body').style.transform="translate(100vw)"
+        document.querySelector('.div_av').style.transitionDuration="1s"
+        document.querySelector('.div_av').style.transform="translateY(0)"
+        document.querySelector('.div_av').style.opacity="1"
+    }
+    if(d==='Opciones'){
+        document.querySelector('.enter_body').style.transitionDuration="1.5s"
+        document.querySelector('.enter_body').style.transform="translate(100vw)"
+        document.querySelector('.aventuras_body').style.transitionDuration="2s"
+        document.querySelector('.aventuras_body').style.transform="translate(100vw)"
+        document.querySelector('.div_opt').style.transitionDuration="2s"
+        document.querySelector('.div_opt').style.transform="translateY(0)"
+        document.querySelector('.div_opt').style.opacity="1"
+    }
+}
+
+
+/*------- GWERH,THE BARD -------*/
+
+
+//Tales
+
+export function handlerTaleOnClick(f,e){
+    f(e)
+}
+
+export function handlerTaleOnMouseEnter(f,e){
+    f(e)
+    document.querySelector('._tales_').style.scale='1'
+    document.querySelector('._tales_').style.opacity='1'
+    document.querySelector('._tales_').style.transitionDuration='0.5s'
+}
+
+export function handlerTaleOnMouseLeave(){
+    document.querySelector('._tales_').style.scale='0'
+    document.querySelector('._tales_').style.opacity='0'
+    document.querySelector('._tales_').style.transitionDuration='0.5s'
+}
+
+//Interactions
+
+export function handlerInteractOnClick(e){
+    if(e==='Interactuar') {
+        document.querySelector('.gwerh_btn_interact_on').style.display='block'
+        document.querySelector('.gwerh_btn_interact_on').style.opacity='1'
+        document.querySelector('.gwerh_btn_interact').style.display='none'
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="0.5s"
+        document.querySelector('.gwerh_btn_tales').style.scale="1"
+        document.querySelector('.gwerh_btn_tales').style.opacity="1"
+        document.querySelector('.gwerh_btn_tales').style.transform="translate(-200px,75px)"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.scale="1"
+        document.querySelector('.gwerh_btn_quest').style.opacity="1"
+        document.querySelector('.gwerh_btn_quest').style.transform="translate(-150px,200px)"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1.5s"
+        document.querySelector('.gwerh_btn_contact').style.scale="1"
+        document.querySelector('.gwerh_btn_contact').style.opacity="1"
+        document.querySelector('.gwerh_btn_contact').style.transform="translateY(250px)"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="2s"
+        document.querySelector('.gwerh_btn_opciones').style.scale="1"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="1"
+        document.querySelector('.gwerh_btn_opciones').style.transform="translate(150px,200px)"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="2.5s"
+        document.querySelector('.gwerh_btn_whoru').style.scale="1"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="1"
+        document.querySelector('.gwerh_btn_whoru').style.transform="translate(200px,75px)"
+        document.querySelector('.gwerh_cont_interact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_cont_interact').style.transform="translate(-100px,100px)"
+    }
+    if(e==='Gwerh'){
+        document.querySelector('.gwerh_btn_interact_on').style.display='none'
+        document.querySelector('.gwerh_btn_interact').style.display='block'
+        document.querySelector('.gwerh_btn_tales').style.display='block'
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.scale="0"
+        document.querySelector('.gwerh_btn_tales').style.opacity="0"
+        document.querySelector('.gwerh_btn_tales').style.transform="translate(0)"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.scale="0"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="0"
+        document.querySelector('.gwerh_btn_whoru').style.transform="translate(0)"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.scale="0"
+        document.querySelector('.gwerh_btn_quest').style.opacity="0"
+        document.querySelector('.gwerh_btn_quest').style.transform="translate(0)"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.scale="0"
+        document.querySelector('.gwerh_btn_contact').style.opacity="0"
+        document.querySelector('.gwerh_btn_contact').style.transform="translate(0)"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.scale="0"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="0"
+        document.querySelector('.gwerh_btn_opciones').style.transform="translate(0)"
+        document.querySelector('.gwerh_cont_interact').style.transform="translate(0,0)"     
+        document.querySelector('.gwerh_cont_interact').style.transitionDuration="0.5s"
+    }
+    if(e==='Tales'){
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(0)"
+        document.querySelector('.gwerh_cont_interact').style.opacity="1"
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.opacity="1"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.opacity="0.5"
+    }
+    if(e==='Quest'){
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.opacity="1"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="0.5"
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"    
+    }
+    if(e==='Who are you?'){
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="1"
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+    }
+    if(e==='Contact'){
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.opacity="1"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="0.5"
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+    }
+    if(e==='Options'){
+        document.querySelector('.lista').style.transitionDuration="1s"
+        document.querySelector('.lista').style.transform="translate(-300px)"
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.opacity="0.5"
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.opacity="1"
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.opacity="0.5"
+    }
+
+}
+
+export function handlerInteractOnMouseEnter(f,e,d){
+    f(e)
+    if(e==='Interactuar'){
+    document.querySelector('._tales_').style.scale='1'
+    document.querySelector('._tales_').style.opacity='1'
+    document.querySelector('._tales_').style.transitionDuration='0.5s'
+    document.querySelector('.gwerh_btn_interact').style.transitionDuration="1s"
+    document.querySelector('.gwerh_btn_interact').style.filter="brightness(1.2)"
+    document.querySelector('.gwerh_btn_interact').style.animationName="none"
+    document.querySelector('.gwerh_btn_interact').style.scale="1.2"
+    }
+    if(e==='Gwerh'){
+    document.querySelector('._tales_').style.scale='1'
+    document.querySelector('._tales_').style.opacity='1'
+    document.querySelector('._tales_').style.transitionDuration='0.5s'
+    document.querySelector('.gwerh_btn_interact_on').style.transitionDuration="1s"
+    document.querySelector('.gwerh_btn_interact_on').style.filter="brightness(1.2)"
+    document.querySelector('.gwerh_btn_interact_on').style.animationName="none"
+    document.querySelector('.gwerh_btn_interact_on').style.scale="1.2"     
+    }
+    if(e==='Tales'){
+    document.querySelector('._tales_').style.scale='1'
+    document.querySelector('._tales_').style.opacity='1'
+    document.querySelector('._tales_').style.transitionDuration='0.5s'
+    document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+    document.querySelector('.gwerh_btn_tales').style.filter="brightness(1.2)"
+    }
+    if(e==='Quest'){
+        document.querySelector('._tales_').style.scale='1'
+        document.querySelector('._tales_').style.opacity='1'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.filter="brightness(1.2)"
+    }
+    if(e==='Who are you?'){
+        document.querySelector('._tales_').style.scale='1'
+        document.querySelector('._tales_').style.opacity='1'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.filter="brightness(1.2)"
+    }
+    if(e==='Contact'){
+        document.querySelector('._tales_').style.scale='1'
+        document.querySelector('._tales_').style.opacity='1'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.filter="brightness(1.2)"
+    }
+    if(e==='Options'){
+        document.querySelector('._tales_').style.scale='1'
+        document.querySelector('._tales_').style.opacity='1'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.filter="brightness(1.2)"
+    }
+}
+
+export function handlerInteractOnMouseLeave(e){
+    if(e==='Interactuar'){
+        document.querySelector('.gwerh_btn_interact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_interact').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.opacity='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_interact').style.animationName="Floatingx"
+        document.querySelector('.gwerh_btn_interact').style.scale="1"
+    }
+    if(e==='Gwerh'){
+        document.querySelector('.gwerh_btn_interact_on').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_interact_on').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.opacity='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+        document.querySelector('.gwerh_btn_interact_on').style.animationName="Floatingx"
+        document.querySelector('.gwerh_btn_interact_on').style.scale="1"
+    }
+    if(e==='Tales'){
+        document.querySelector('.gwerh_btn_tales').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_tales').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.opacity='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+    }
+    if(e==='Quest'){
+        document.querySelector('.gwerh_btn_quest').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_quest').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+    
+    }
+    if(e==='Who are you?'){
+        document.querySelector('.gwerh_btn_whoru').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_whoru').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+    }
+    if(e==='Contact'){
+        document.querySelector('.gwerh_btn_contact').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_contact').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.opacity='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+    }
+    if(e==='Options'){
+        document.querySelector('.gwerh_btn_opciones').style.transitionDuration="1s"
+        document.querySelector('.gwerh_btn_opciones').style.filter="brightness(1)"
+        document.querySelector('._tales_').style.scale='0'
+        document.querySelector('._tales_').style.opacity='0'
+        document.querySelector('._tales_').style.transitionDuration='0.5s'
+    }
+}
