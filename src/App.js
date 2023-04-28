@@ -4,7 +4,6 @@ import Home from './components/Home/Home';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import GwerhTheBard from './components/Pages/aventuras/GwerhTheBard';
-import Ainulindalë from './components/Pages/aventuras/Ainulindalë';
 
 
 function App() {
