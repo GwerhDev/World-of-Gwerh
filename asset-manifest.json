@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.195cd84c.css",
-    "main.js": "/static/js/main.0d073a7c.js",
+    "main.js": "/static/js/main.e34ff6c3.js",
     "static/js/787.dab6a6fc.chunk.js": "/static/js/787.dab6a6fc.chunk.js",
     "static/media/background.png": "/static/media/background.0d29dc72113278745b1c.png",
     "static/media/background-div-enter.png": "/static/media/background-div-enter.aeabbcfad680f9c7d58a.png",
@@ -21,22 +21,20 @@
     "static/media/logo.png": "/static/media/logo.0dd18f2ea762a25c5e4e.png",
     "static/media/soundbtn-on.png": "/static/media/soundbtn-on.a11f2b47c43a57da41be.png",
     "static/media/lotr-ring.png": "/static/media/lotr-ring.0ba384dda10f96a01dd4.png",
-    "static/media/laruinatv.png": "/static/media/laruinatv.8e606a309e0856fa04d9.png",
     "static/media/WoG.ttf": "/static/media/WoG.7955f5b9def32d18547d.ttf",
     "static/media/icon-interact.png": "/static/media/icon-interact.2921cf02275fc43d82ac.png",
     "static/media/BebasNeue.otf": "/static/media/BebasNeue.a92d19b5693c162bf887.otf",
     "static/media/gtb-logo.png": "/static/media/gtb-logo.da077e386c4869fbe45c.png",
-    "static/media/logo-ainulindalë.png": "/static/media/logo-ainulindalë.2e22443b34e6a7bc57be.png",
     "static/media/AppFont.otf": "/static/media/AppFont.e7a429ada843101f73b5.otf",
     "static/media/fondo_info.png": "/static/media/fondo_info.f3aa9db97fd2e8af253e.png",
     "static/media/btn-entrar-hover.png": "/static/media/btn-entrar-hover.3fdb402c68d93814bd2e.png",
     "index.html": "/index.html",
     "main.195cd84c.css.map": "/static/css/main.195cd84c.css.map",
-    "main.0d073a7c.js.map": "/static/js/main.0d073a7c.js.map",
+    "main.e34ff6c3.js.map": "/static/js/main.e34ff6c3.js.map",
     "787.dab6a6fc.chunk.js.map": "/static/js/787.dab6a6fc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.195cd84c.css",
-    "static/js/main.0d073a7c.js"
+    "static/js/main.e34ff6c3.js"
   ]
 }
