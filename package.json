@@ -1,5 +1,6 @@
 {
   "name": "world-of-gwerh",
+  "homepage": "http://worldofgwerh.terminalkiller.site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
