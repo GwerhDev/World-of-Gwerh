@@ -15,12 +15,13 @@ import { useSelector } from 'react-redux';
 
 function Home() {
     const player = useRef()
-    const [mediaTheme, setMediaTheme] = useState(mainTheme)
+    const [mediaTheme, setMediaTheme] = useState('')
     const _preloader_ = useSelector(state=>state.preloader)
     const _server_ = useSelector(state=>state.aventuras)
+    const [playState, setPlayState] = useState(false)
 
     GlobalStates('home')
-
+    
     return (
         <div className="home">
         <div id="preload-images"></div>
@@ -31,7 +32,7 @@ function Home() {
             showFilledProgress={false}
             hasDefaultKeyBindings={false}
             src={mediaTheme}
-            autoPlay={true}
+            autoPlay={playState}
             style={{display:'none'}}
             onListen={()=>{
                 if (player.current.audio.current.currentTime>=164.55){
@@ -61,9 +62,9 @@ function Home() {
                 ( null )
             }
             </div>
-                <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOn})`}} 
+                <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOff})`}} 
                 onClick={()=>{
-                    if(mediaTheme===''){
+                    if(mediaTheme==='' && !playState){
                         document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
                         setMediaTheme(mainTheme)
                     }
@@ -75,6 +76,36 @@ function Home() {
                     document.querySelector('.soundBtn').style.opacity='1'
                 }}
                 ></button>
+        <div style={{
+                position:'fixed', 
+                borderRadius:'15px', 
+                boxShadow:'0px 0px 100px black', 
+                left:'10vw', 
+                top:'10vh', 
+                width:'80vw', 
+                backgroundColor:'#171717ee',
+                
+                }}
+                id='soundAlert'>
+            <p style={{padding:'50px'}}>Para disfrutar de la experiencia completa, por favor activa el sonido en tu dispositivo. ¿Quieres activarlo ahora?</p>
+            <button style={{marginBottom:'50px', marginRight: '5px'}} onClick={()=> {
+                document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
+                setMediaTheme(mainTheme)
+                setPlayState(true)
+                document.querySelector('#soundAlert').style.display='none'
+            }}>
+                Sí
+            </button>
+            <button style={{marginBottom:'50px', marginLeft: '5px'}} onClick={()=> {
+                document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOff})`
+                setMediaTheme('')
+                setPlayState(false)
+                document.querySelector('#soundAlert').style.display='none'
+            }}>
+                No
+            </button>
+        </div>
+
         </div>
     )
 }
