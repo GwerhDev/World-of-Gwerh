@@ -1,8 +1,8 @@
-import s from './css/Errors.module.css'
+import s from './Errors.module.css'
 
-const ErrorAventuras = () => {
+const ErrorAdventures = () => {
     return(
     <div className={s.err}><button className={s.btn} disabled={true}>Not connected</button></div>
 )}
 
-export default ErrorAventuras
+export default ErrorAdventures

@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import logo from '../../../assets/images/png/title.png';
 import lotr from '../../../assets/images/png/lotr-ring.png'
-import estilos from './css/Entrar.module.css';
+import s from './Enter.module.css';
 import AudioPlayer from 'react-h5-audio-player';
 import { handlerBtnOnClick } from '../../../handlers/handlers';
 
-const Entrar = () => {
+const Enter = () => {
     const btnHover = "sound/btn-hover.mp3"
     const btnClick = "sound/btn.mp3"
     const [url, setUrl] = useState('')
 
     return (
         <div>
-            <div className={estilos.div_title}>
-                    <img className={estilos.title} src={logo} alt="" />
+            <div className={s.div_title}>
+                    <img className={s.title} src={logo} alt="" />
             </div>
-            <div className={estilos.div_lotr}>
-                <img className={estilos.lotr} src={lotr} alt="" />
+            <div className={s.div_lotr}>
+                <img className={s.lotr} src={lotr} alt="" />
             </div>
                 <ul>
                     <li>
                         <button 
-                        className={estilos.in} 
+                        className={s.in} 
                         onMouseEnter={()=>setUrl(btnHover)} 
                         onClick={()=> handlerBtnOnClick(setUrl, btnClick, 'Aventuras')}>
                         Aventuras
@@ -29,7 +29,7 @@ const Entrar = () => {
                     </li>
                     <li>
                         <button 
-                        className={estilos.opt} 
+                        className={s.opt} 
                         onMouseEnter={()=>setUrl(btnHover)} 
                         onClick={()=> handlerBtnOnClick(setUrl, btnClick, 'Opciones')}>
                         Opciones
@@ -45,4 +45,4 @@ const Entrar = () => {
     )
 }
 
-export default Entrar
+export default Enter;

@@ -2,7 +2,7 @@ import '../../../styles/player.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AudioPlayer from 'react-h5-audio-player';
-import estilos from './css/GwerhTheBard.module.css';
+import s from './GwerhTheBard.module.css';
 import logo from '../../../assets/images/png/gtb-logo.png'
 import icontales from '../../../assets/images/png/icon-tales.png';
 import iconwhoru from '../../../assets/images/png/icon-whoru.png';
@@ -11,6 +11,10 @@ import iconcontact from '../../../assets/images/png/icon-contact.png';
 import iconconfig from '../../../assets/images/png/icon-config.png';
 import iconInteract from '../../../assets/images/png/icon-interact.png';
 import { useDispatch, useSelector } from 'react-redux';
+import { GwerhStates } from '../../../functions/GwerhStates';
+import { preloader, preloaderState } from '../../../middleware/redux/actions';
+import { GlobalStates } from '../../../functions/GlobalStates';
+import Preloader from '../../components/Utils/Preloader/Preloader.component';
 import { 
     handlerInteractOnClick, 
     handlerInteractOnMouseEnter, 
@@ -19,10 +23,6 @@ import {
     handlerTaleOnMouseEnter, 
     handlerTaleOnMouseLeave 
 } from '../../../handlers/handlers';
-import { GwerhStates } from '../../../functions/GwerhStates';
-import { preloader, preloaderState } from '../../../middleware/redux/actions';
-import { GlobalStates } from '../../../functions/GlobalStates';
-import Preloader from '../../components/utils/Preloader/Preloader';
 
 const GwerhTheBard = () => {    
     const [urlTale, setUrlTale] = useState('')
@@ -47,7 +47,7 @@ const GwerhTheBard = () => {
         :
             ( null )
         }
-            <Link to='/'> <button className={estilos.out} 
+            <Link to='/'> <button className={s.out} 
             onClick={()=>{return (
                 dispatch(preloaderState(10)),
                 dispatch(preloader(true)),
@@ -63,7 +63,7 @@ const GwerhTheBard = () => {
                         (talesList.map (e =>{
                             return(
                                 <li key={e.id}>
-                                <button className={estilos.list} value={e.attributes.url} name={e.attributes.name}
+                                <button className={s.list} value={e.attributes.url} name={e.attributes.name}
                                 onClick={(e) => handlerTaleOnClick(setUrlTale, e.target.value)}
                                 onMouseEnter={(e)=> handlerTaleOnMouseEnter(setName, e.target.name)}
                                 onMouseLeave={()=> handlerTaleOnMouseLeave()}>

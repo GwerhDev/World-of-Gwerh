@@ -1,15 +1,15 @@
 import React, { useRef, useState } from "react";
-import Aventuras from "./Aventuras";
-import Entrar from './Entrar';
-import Opciones from './Opciones';
+import Enter from '../../components/Enter/Enter.component';
 import soundBtnOn from '../../../assets/images/png/soundbtn-on.png';
 import soundBtnOff from '../../../assets/images/png/soundbtn-off.png';
 import mainTheme from '../../../assets/sounds/main-theme.mp3';
 import AudioPlayer from 'react-h5-audio-player';
-import Preloader from '../../components/utils/Preloader/Preloader';
+import Preloader from '../../components/Utils/Preloader/Preloader.component';
 import logo from '../../../assets/images/png/WoG-Icon.png';
 import { GlobalStates } from "../../../functions/GlobalStates";
 import { useSelector } from 'react-redux';
+import Adventures from "../../components/Adventures/Adventures.component";
+import Options from "../../components/Options/Options.component";
 
 function Home() {
     const player = useRef()
@@ -44,11 +44,11 @@ function Home() {
                 <div className="opciones_body">
                     <div className="aventuras_body">
                         <div className="enter_body"> 
-                            <Entrar />
+                            <Enter />
                         </div>
-                        <Aventuras />
+                        <Adventures />
                     </div>
-                    <Opciones />
+                    <Options />
                 </div> 
             {
             (_server_)?

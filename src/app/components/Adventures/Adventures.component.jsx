@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import s from './css/Aventuras.module.css'
+import s from './Adventures.module.css'
 import AudioPlayer from 'react-h5-audio-player';
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import ErrorAventuras from '../../components/utils/Errors/ErrorAventuras';
+import ErrorAventuras from '../Utils/Errors/ErrorAventuras.component';
 
-const Aventuras = () => {
+const Adventures = () => {
     const adventures = useSelector(state => state.adventures)
     const [url, setUrl] = useState('')
 
@@ -78,4 +78,4 @@ const Aventuras = () => {
         
     )
 }
-export default Aventuras
+export default Adventures

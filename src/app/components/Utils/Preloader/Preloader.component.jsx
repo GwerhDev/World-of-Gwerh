@@ -1,5 +1,5 @@
 import React from 'react';
-import estilos from './css/Preloader.module.css';
+import s from './Preloader.module.css';
 import { useSelector } from 'react-redux';
 
 const Preloader = (params) => {
@@ -7,10 +7,10 @@ const Preloader = (params) => {
     const preloaderState = useSelector(state=>state.preloaderState)
     return (
         <div className='Preloader'>
-            <div className={estilos.div_title}>
-                <img className={estilos.title} src={img} alt="" />
+            <div className={s.div_title}>
+                <img className={s.title} src={img} alt="" />
             </div>
-            <progress className={estilos.progress} id="onload" max="100" value={preloaderState}></progress>
+            <progress className={s.progress} id="onload" max="100" value={preloaderState}></progress>
         </div>
     )
 }

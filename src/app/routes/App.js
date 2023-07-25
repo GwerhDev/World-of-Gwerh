@@ -3,7 +3,7 @@ import icon from '../../assets/images/png/logo.png'
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import GwerhTheBard from '../pages/Adventures/GwerhTheBard';
+import GwerhTheBard from '../pages/GwerhTheBard/GwerhTheBard';
 
 
 function App() {

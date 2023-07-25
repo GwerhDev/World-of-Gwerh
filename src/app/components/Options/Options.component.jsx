@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import estilos from './css/Opciones.module.css';
+import s from './Options.module.css';
 import AudioPlayer from 'react-h5-audio-player';
 
-const Opciones = () => {
+const Options = () => {
     const [url, setUrl] = useState('')
     return (
         <div className='div_opt'>
             <p>Opciones</p>
             <button 
-                className={estilos.opt} 
+                className={s.opt} 
                 onMouseEnter={()=>setUrl("sound/btn-hover.mp3")} 
                 onClick={()=>
                     {
@@ -34,4 +34,4 @@ const Opciones = () => {
         </div>
   )
 }
-export default Opciones
+export default Options;
