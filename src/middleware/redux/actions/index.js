@@ -1,5 +1,5 @@
 import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER } from '../../misc/consts';
-import { URL_API } from '../config';
+import { URL_API } from '../../../config/config';
 
 export function getTales() {
     return function(dispatch) {

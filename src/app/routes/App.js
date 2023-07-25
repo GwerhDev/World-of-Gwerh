@@ -1,9 +1,9 @@
-import './App.css';
-import icon from './design/logo.png'
-import Home from './components/Home/Home';
+import '../../styles/App.css';
+import icon from '../../assets/images/png/logo.png'
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import GwerhTheBard from './components/Pages/aventuras/GwerhTheBard';
+import Home from '../pages/Home/Home';
+import GwerhTheBard from '../pages/Adventures/GwerhTheBard';
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <div className="App"> 
           <Switch>
             <Route exact path='/'>
-                <Home /> 
+              <Home /> 
             </Route>
             <Route path='/adventures/gwerh-the-bard'>
               <GwerhTheBard />

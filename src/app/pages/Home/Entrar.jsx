@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import logo from '../../design/title.png';
-import lotr from '../../design/lotr-ring.png'
+import logo from '../../../assets/images/png/title.png';
+import lotr from '../../../assets/images/png/lotr-ring.png'
 import estilos from './css/Entrar.module.css';
 import AudioPlayer from 'react-h5-audio-player';
-import { handlerBtnOnClick } from '../../handlers/handlers';
+import { handlerBtnOnClick } from '../../../handlers/handlers';
 
 const Entrar = () => {
     const btnHover = "sound/btn-hover.mp3"

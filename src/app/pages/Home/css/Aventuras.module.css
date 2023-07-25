@@ -6,7 +6,7 @@
     font-weight: 400;
     font-size: 20px;
     text-shadow: 2px 2px #000000a0;
-    background-image: url(../../../design/btn-entrar.png);
+    background-image: url(../../../../assets/images/png/btn-entrar.png);
     background-position: center;
     border-color: rgb(255, 255, 255);
     border-width: 2px;
@@ -16,7 +16,7 @@
 }
 
 .btn:hover{
-    background-image: url(../../../design/btn-entrar-hover.png);
+    background-image: url(../../../../assets/images/png/btn-entrar-hover.png);
     cursor: pointer;
     transition-duration: 0.4s;
     filter: brightness(1.05);
@@ -31,7 +31,7 @@
     font-weight: 400;
     font-size: 20px;
     text-shadow: 2px 2px #000000a0;
-    background-image: url(../../../design/btn-entrar.png);
+    background-image: url(../../../../assets/images/png/btn-entrar.png);
     background-position: center;
     border-color: rgb(255, 255, 255);
     border-width: 2px;
@@ -48,14 +48,14 @@
     font-weight: 400;
     font-size: 30px;
     text-shadow: 2px 2px #000000a0;
-    background-image: url(../../../design/btn-entrar.png);
+    background-image: url(../../../../assets/images/png/btn-entrar.png);
     border: none;
     z-index: 999;
     margin-top: 30px;
 }
 
 .out:hover, .opt:hover {
-    background-image: url(../../../design/btn-entrar-hover.png);
+    background-image: url(../../../../assets/images/png/btn-entrar-hover.png);
     cursor: pointer;
     transition-duration: 0.4s;
     filter: brightness(1.05);
@@ -76,7 +76,7 @@ p{
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  background-image: url(../../../design/background-div-aventuras.png);
+  background-image: url(../../../../assets/images/png/background-div-aventuras.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

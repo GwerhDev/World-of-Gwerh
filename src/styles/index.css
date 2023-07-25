@@ -1,16 +1,16 @@
 @font-face {
   font-family: WoG;
-  src: url('./fonts/WoG.ttf')
+  src: url('../assets/fonts/WoG.ttf')
 }
 
 @font-face {
   font-family: AppFont;
-  src: url('./fonts/AppFont.otf')
+  src: url('../assets/fonts/AppFont.otf')
 }
 
 @font-face {
   font-family: Bebas Neue;
-  src: url('./fonts/BebasNeue.otf');
+  src: url('../assets/fonts/BebasNeue.otf');
 }
 
 

@@ -1,5 +1,5 @@
 .home{
-  background-image: url(./design/background.png);
+  background-image: url(../assets/images/png/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -91,7 +91,7 @@ ul{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url('./design/background-div-enter.png');
+  background-image: url(../assets/images/png/background-div-enter.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
@@ -109,7 +109,7 @@ ul{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url('./design/background-div-aventuras.png');
+  background-image: url(../assets/images/png/background-div-aventuras.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left;
@@ -122,7 +122,7 @@ ul{
 }
 
 .gwerh_body{
-  background-image: url(./design/background-gwerh.png);
+  background-image: url(../assets/images/png/background-gwerh.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -188,7 +188,7 @@ ul{
 }
 
 ._tales_{
-  background-image: url('./design/fondo_info.png');
+  background-image: url(../assets/images/png/fondo_info.png);
   width: 300px;
   height: 400px;
   bottom: 90px;
@@ -222,16 +222,10 @@ ul{
 }
 
 
-
-
-
-
-
-
 @keyframes Floatingx{
     from {-webkit-transform:translate(0, 0px);}
     65% {-webkit-transform:translate(0, 5px);}
-    to {-webkit-transform: translate(0, -0px);    }    
+    to {-webkit-transform: translate(0, -0px);}    
 }
     
 @keyframes Floating{
@@ -243,7 +237,7 @@ ul{
 @keyframes Floatingx2{
     from {-webkit-transform:translate(0, 0px);}
     45% {-webkit-transform:translate(0, 8px);}
-    to {-webkit-transform: translate(0, -0px);    }    
+    to {-webkit-transform: translate(0, -0px);}    
 }
     
 @keyframes Floating2{
@@ -255,7 +249,7 @@ ul{
 @keyframes Floatingx3{
     from {-webkit-transform:translate(0, 0px);}
     50% {-webkit-transform:translate(2px, 4px);}
-    to {-webkit-transform: translate(0, -0px);    }    
+    to {-webkit-transform: translate(0, -0px);}    
 }
     
 @keyframes Floating3{
@@ -327,7 +321,7 @@ ul{
 .visor{
   overflow: hidden;
   height: 86vh;
-  background-image: url('./design/background-ainulindale.png');
+  background-image: url(../assets/images/png/background-ainulindale.png);
   background-repeat: no-repeat;
   background-size: cover;
   z-index: 0;
@@ -487,7 +481,7 @@ button:hover{
   width: calc(100vw/7);
   height: 120px;
   border:none;
-  background-image: url('./design/Ainulindalë-by-Gwerh.jpg');
+  background-image: url(../assets/images/jpg/Ainulindalë-by-Gwerh.jpg);
   background-size: cover;
   position: relative;
   color: #dfdfdfbe;

@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Aventuras from "./Aventuras";
 import Entrar from './Entrar';
 import Opciones from './Opciones';
-import soundBtnOn from '../../design/soundbtn-on.png';
-import soundBtnOff from '../../design/soundbtn-off.png';
-import mainTheme from '../../sounds/main-theme.mp3';
+import soundBtnOn from '../../../assets/images/png/soundbtn-on.png';
+import soundBtnOff from '../../../assets/images/png/soundbtn-off.png';
+import mainTheme from '../../../assets/sounds/main-theme.mp3';
 import AudioPlayer from 'react-h5-audio-player';
-import Preloader from '../Utils/Preloader';
-import logo from '../../design/WoG-Icon.png';
-import { useRef } from "react";
-import { useState } from "react";
-import { GlobalStates } from "../../functions/GlobalStates";
+import Preloader from '../../components/utils/Preloader/Preloader';
+import logo from '../../../assets/images/png/WoG-Icon.png';
+import { GlobalStates } from "../../../functions/GlobalStates";
 import { useSelector } from 'react-redux';
 
 function Home() {

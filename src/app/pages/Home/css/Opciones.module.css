@@ -6,7 +6,7 @@
     font-weight: 400;
     font-size: 20px;
     text-shadow: 2px 2px #000000a0;
-    background-image: url(../../../design/btn-entrar.png);
+    background-image: url(../../../../assets/images/png/btn-entrar.png);
     background-position: center;
     border-color: rgb(255, 255, 255);
     border-width: 2px;
@@ -15,7 +15,7 @@
     margin-top: 70px;
 }
 .opt:hover {
-    background-image: url(../../../design/btn-entrar-hover.png);
+    background-image: url(../../../../assets/images/png/btn-entrar-hover.png);
     cursor: pointer;
     transition-duration: 0.4s;
     filter: brightness(1.05);

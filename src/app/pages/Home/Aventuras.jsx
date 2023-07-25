@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import estilos from './css/Aventuras.module.css'
+import s from './css/Aventuras.module.css'
 import AudioPlayer from 'react-h5-audio-player';
 import { useSelector } from 'react-redux'
-import ErrorAventuras from '../Errors/ErrorAventuras';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import ErrorAventuras from '../../components/utils/Errors/ErrorAventuras';
 
 const Aventuras = () => {
     const adventures = useSelector(state => state.adventures)
@@ -22,7 +22,7 @@ const Aventuras = () => {
                             e.name==='Ainulindalë'?
                             <li key={e.id}>
                                 <a href={e.url} target='_blank' rel='noreferrer'>
-                                    <button className={estilos.btn}
+                                    <button className={s.btn}
                                         onMouseEnter={()=>setUrl("sound/btn-hover.mp3")}
                                         onClick={()=>{return (
                                             setUrl("sound/btn.mp3")
@@ -35,7 +35,7 @@ const Aventuras = () => {
                             :
                             <li key={e.id}>
                             <Link to={e.url}>
-                                <button className={estilos.btn}
+                                <button className={s.btn}
                                     onMouseEnter={()=>setUrl("sound/btn-hover.mp3")}
                                     onClick={()=>{return (
                                         setUrl("sound/btn.mp3")
@@ -50,7 +50,7 @@ const Aventuras = () => {
                     : (<ErrorAventuras />)
                         }
                         <li>
-                        <button className={estilos.out} onClick={()=>
+                        <button className={s.out} onClick={()=>
                             {
                                 setUrl("sound/btn.mp3")
                                 document.querySelector('.enter_body').style.transitionDuration="1s"

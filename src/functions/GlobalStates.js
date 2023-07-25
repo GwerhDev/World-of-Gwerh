@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { getAventuras, preloader, preloaderState } from '../middleware/actions';
+import { getAventuras, preloader, preloaderState } from '../middleware/redux/actions';
 import { useEffect } from 'react';
 import { PreloaderStates } from './PreloaderStates';
 

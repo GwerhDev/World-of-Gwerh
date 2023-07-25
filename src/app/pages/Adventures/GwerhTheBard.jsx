@@ -1,28 +1,34 @@
+import '../../../styles/player.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AudioPlayer from 'react-h5-audio-player';
 import estilos from './css/GwerhTheBard.module.css';
-import icontales from '../../../design/icon-tales.png';
-import iconwhoru from '../../../design/icon-whoru.png';
-import iconquest from '../../../design/icon-quest.png';
-import iconcontact from '../../../design/icon-contact.png';
-import iconconfig from '../../../design/icon-config.png';
-import iconInteract from '../../../design/icon-interact.png';
+import logo from '../../../assets/images/png/gtb-logo.png'
+import icontales from '../../../assets/images/png/icon-tales.png';
+import iconwhoru from '../../../assets/images/png/icon-whoru.png';
+import iconquest from '../../../assets/images/png/icon-quest.png';
+import iconcontact from '../../../assets/images/png/icon-contact.png';
+import iconconfig from '../../../assets/images/png/icon-config.png';
+import iconInteract from '../../../assets/images/png/icon-interact.png';
 import { useDispatch, useSelector } from 'react-redux';
-import '../../player.css';
-import { handlerInteractOnClick, handlerInteractOnMouseEnter, handlerInteractOnMouseLeave, handlerTaleOnClick, handlerTaleOnMouseEnter, handlerTaleOnMouseLeave } from '../../../handlers/handlers';
+import { 
+    handlerInteractOnClick, 
+    handlerInteractOnMouseEnter, 
+    handlerInteractOnMouseLeave, 
+    handlerTaleOnClick, 
+    handlerTaleOnMouseEnter, 
+    handlerTaleOnMouseLeave 
+} from '../../../handlers/handlers';
 import { GwerhStates } from '../../../functions/GwerhStates';
-import { preloader, preloaderState } from '../../../middleware/actions';
-import Preloader from '../../Utils/Preloader';
-import logo from '../../../design/gtb-logo.png'
+import { preloader, preloaderState } from '../../../middleware/redux/actions';
 import { GlobalStates } from '../../../functions/GlobalStates';
+import Preloader from '../../components/utils/Preloader/Preloader';
 
 const GwerhTheBard = () => {    
     const [urlTale, setUrlTale] = useState('')
     const [name, setName] = useState('')
     const _preloader_ = useSelector(state=>state.preloader)
     const dispatch = useDispatch()
-
 
     if(urlTale !== ''){
         document.querySelector('.gwerh_player').style.display="block"
