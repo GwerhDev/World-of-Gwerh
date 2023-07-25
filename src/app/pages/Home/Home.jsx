@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Enter from '../../components/Enter/Enter.component';
 import soundBtnOn from '../../../assets/images/png/soundbtn-on.png';
 import soundBtnOff from '../../../assets/images/png/soundbtn-off.png';
@@ -10,100 +10,83 @@ import { GlobalStates } from "../../../functions/GlobalStates";
 import { useSelector } from 'react-redux';
 import Adventures from "../../components/Adventures/Adventures.component";
 import Options from "../../components/Options/Options.component";
+import { SoundAlert } from "../../components/Utils/SoundAlert/SoundAlert.component";
 
 function Home() {
     const player = useRef()
-    const [mediaTheme, setMediaTheme] = useState('')
+    const sound = Boolean(localStorage.getItem('sound'));
+    const theme = sound? mainTheme : '';
+    const [playState, setPlayState] = useState(sound);
+    const [mediaTheme, setMediaTheme] = useState(theme);
     const _preloader_ = useSelector(state=>state.preloader)
-    const _server_ = useSelector(state=>state.aventuras)
-    const [playState, setPlayState] = useState(false)
+    const _server_ = useSelector(state=>state.aventuras);
 
-    GlobalStates('home')
+    useEffect(() => {
+        setMediaTheme(theme)
+        setPlayState(sound)
+    }, [theme, sound])
+    
+    GlobalStates('home');
     
     return (
         <div className="home">
-        <div id="preload-images"></div>
-            <AudioPlayer 
-            ref={player} id='main-theme' 
-            showJumpControls={false}
-            showDownloadProgress={false}
-            showFilledProgress={false}
-            hasDefaultKeyBindings={false}
-            src={mediaTheme}
-            autoPlay={playState}
-            style={{display:'none'}}
-            onListen={()=>{
-                if (player.current.audio.current.currentTime>=164.55){
-                    return player.current.audio.current.currentTime=89.55
-                }
-            }}
-            type='audio/mp3'
-            preload='auto' 
-            />
-            <div className="div_home">
-                <div className="opciones_body">
-                    <div className="aventuras_body">
-                        <div className="enter_body"> 
-                            <Enter />
-                        </div>
-                        <Adventures />
-                    </div>
-                    <Options />
-                </div> 
-            {
-            (_server_)?
-                ( <><Preloader img={logo} /></> )
-                :
-            (_preloader_ ) ?
-                ( <><Preloader img={logo} /></> )
-                :
-                ( null )
-            }
-            </div>
-                <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOff})`}} 
-                onClick={()=>{
-                    if(mediaTheme==='' && !playState){
-                        document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
-                        setMediaTheme(mainTheme)
+            <div id="preload-images"></div>
+                <AudioPlayer 
+                ref={player} id='main-theme' 
+                showJumpControls={false}
+                showDownloadProgress={false}
+                showFilledProgress={false}
+                hasDefaultKeyBindings={false}
+                src={mediaTheme}
+                autoPlay={playState}
+                style={{display:'none'}}
+                onListen={()=>{
+                    if (player.current.audio.current.currentTime>=164.55){
+                        return player.current.audio.current.currentTime=89.55
                     }
-                    else{
-                    document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOff})`
-                    setMediaTheme('')
-                }}}
-                onMouseEnter={()=>{
-                    document.querySelector('.soundBtn').style.opacity='1'
                 }}
-                ></button>
-        <div style={{
-                position:'fixed', 
-                borderRadius:'15px', 
-                boxShadow:'0px 0px 100px black', 
-                left:'10vw', 
-                top:'10vh', 
-                width:'80vw', 
-                backgroundColor:'#171717ee',
-                
-                }}
-                id='soundAlert'>
-            <p style={{padding:'50px'}}>Para disfrutar de la experiencia completa, por favor activa el sonido en tu dispositivo. ¿Quieres activarlo ahora?</p>
-            <button style={{marginBottom:'50px', marginRight: '5px'}} onClick={()=> {
-                document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
-                setMediaTheme(mainTheme)
-                setPlayState(true)
-                document.querySelector('#soundAlert').style.display='none'
-            }}>
-                Sí
-            </button>
-            <button style={{marginBottom:'50px', marginLeft: '5px'}} onClick={()=> {
-                document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOff})`
-                setMediaTheme('')
-                setPlayState(false)
-                document.querySelector('#soundAlert').style.display='none'
-            }}>
-                No
-            </button>
-        </div>
-
+                type='audio/mp3'
+                preload='auto' 
+                />
+                <div className="div_home">
+                    <div className="opciones_body">
+                        <div className="aventuras_body">
+                            <div className="enter_body"> 
+                                <Enter />
+                            </div>
+                            <Adventures />
+                        </div>
+                        <Options />
+                    </div> 
+                {
+                (_server_)?
+                    ( <><Preloader img={logo} /></> )
+                    :
+                (_preloader_ ) ?
+                    ( <><Preloader img={logo} /></> )
+                    :
+                    ( null )
+                }
+                </div>
+                    <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOff})`}} 
+                    onClick={()=>{
+                        if(mediaTheme==='' && !playState){
+                            document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
+                            setMediaTheme(mainTheme)
+                        }
+                        else{
+                        document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOff})`
+                        setMediaTheme('')
+                    }}}
+                    onMouseEnter={()=>{
+                        document.querySelector('.soundBtn').style.opacity='1'
+                    }}
+                    ></button>
+            {
+                !sound?
+                    <SoundAlert mainTheme={mainTheme} setMediaTheme={setMediaTheme} setPlayState={setPlayState} soundBtnOn={soundBtnOn} soundBtnOff={soundBtnOff} />
+                :   null
+            }
         </div>
     )
 }

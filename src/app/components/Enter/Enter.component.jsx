@@ -11,36 +11,39 @@ const Enter = () => {
     const [url, setUrl] = useState('')
 
     return (
-        <div>
-            <div className={s.div_title}>
+        <div className={s.enterContainer}>
+            <div className={s.divLogo}>
+                <div className={s.div_title}>
                     <img className={s.title} src={logo} alt="" />
-            </div>
-            <div className={s.div_lotr}>
-                <img className={s.lotr} src={lotr} alt="" />
-            </div>
-                <ul>
-                    <li>
-                        <button 
-                        className={s.in} 
-                        onMouseEnter={()=>setUrl(btnHover)} 
-                        onClick={()=> handlerBtnOnClick(setUrl, btnClick, 'Aventuras')}>
-                        Aventuras
-                        </button>
-                    </li>
-                    <li>
-                        <button 
-                        className={s.opt} 
-                        onMouseEnter={()=>setUrl(btnHover)} 
-                        onClick={()=> handlerBtnOnClick(setUrl, btnClick, 'Opciones')}>
-                        Opciones
-                        </button>
-                    </li>
-                </ul>
-                <div className='sounds'>
-                    <AudioPlayer 
-                        src={url}
-                        onEnded={e => setUrl('')}/>
                 </div>
+                <div className={s.div_lotr}>
+                    <img className={s.lotr} src={lotr} alt="" />
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <button
+                        className={s.in}
+                        onMouseEnter={() => setUrl(btnHover)}
+                        onClick={() => handlerBtnOnClick(setUrl, btnClick, 'Aventuras')}>
+                        Aventuras
+                    </button>
+                </li>
+                <li>
+                    <button
+                        className={s.opt}
+                        onMouseEnter={() => setUrl(btnHover)}
+                        onClick={() => handlerBtnOnClick(setUrl, btnClick, 'Opciones')}>
+                        Opciones
+                    </button>
+                </li>
+            </ul>
+            <div className='sounds'>
+                <AudioPlayer
+                    src={url}
+                    onEnded={e => setUrl('')} 
+                />
+            </div>
         </div>
     )
 }

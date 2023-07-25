@@ -89,14 +89,27 @@
 }
 
 .div_lotr{
-    width: 99vw;
-    margin-top: 75px;
+    width: 100%;
     z-index: 0;
 }
 
 .div_title{
-    width: 99vw;
-    margin-top: 25px;
-    position: absolute;
+    width: 100%;
     z-index: 999;
+    position: absolute;
+}
+
+.enterContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divLogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
