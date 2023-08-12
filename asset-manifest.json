@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8992065.css",
-    "main.js": "/static/js/main.25f17ec7.js",
+    "main.css": "/static/css/main.3118a6e0.css",
+    "main.js": "/static/js/main.009151ec.js",
     "static/js/787.dab6a6fc.chunk.js": "/static/js/787.dab6a6fc.chunk.js",
     "static/media/background.png": "/static/media/background.0d29dc72113278745b1c.png",
     "static/media/background-div-enter.png": "/static/media/background-div-enter.aeabbcfad680f9c7d58a.png",
@@ -10,31 +10,34 @@
     "static/media/main-theme.mp3": "/static/media/main-theme.dd1058e409890e193937.mp3",
     "static/media/icon-quest.png": "/static/media/icon-quest.1bc061a6a41b8b75e4d8.png",
     "static/media/background-gwerh.png": "/static/media/background-gwerh.19f3f31154a0382cf252.png",
-    "static/media/background-ainulindale.png": "/static/media/background-ainulindale.a9a9cc8ba06bc119a219.png",
     "static/media/soundbtn-off.png": "/static/media/soundbtn-off.ab63d5ce7b37b057eeff.png",
     "static/media/icon-tales.png": "/static/media/icon-tales.c32481de55acd48a2c34.png",
     "static/media/WoG-Icon.png": "/static/media/WoG-Icon.57df0728f608db0e9740.png",
     "static/media/title.png": "/static/media/title.c20f57ada5c6a5f1fe13.png",
-    "static/media/Ainulindalë-by-Gwerh.jpg": "/static/media/Ainulindalë-by-Gwerh.0b3ec0bd3f0ca98fc747.jpg",
     "static/media/icon-contact.png": "/static/media/icon-contact.398353d1659ce3f89e95.png",
     "static/media/icon-whoru.png": "/static/media/icon-whoru.0dd18f2ea762a25c5e4e.png",
     "static/media/logo.png": "/static/media/logo.0dd18f2ea762a25c5e4e.png",
     "static/media/soundbtn-on.png": "/static/media/soundbtn-on.a11f2b47c43a57da41be.png",
+    "static/media/lang-icon.png": "/static/media/lang-icon.b28e88d7a0c18668f9cc.png",
     "static/media/lotr-ring.png": "/static/media/lotr-ring.0ba384dda10f96a01dd4.png",
+    "static/media/back-icon.png": "/static/media/back-icon.cb4c933db9aa986a0a83.png",
     "static/media/WoG.ttf": "/static/media/WoG.7955f5b9def32d18547d.ttf",
     "static/media/icon-interact.png": "/static/media/icon-interact.2921cf02275fc43d82ac.png",
     "static/media/BebasNeue.otf": "/static/media/BebasNeue.a92d19b5693c162bf887.otf",
+    "static/media/config-icon.png": "/static/media/config-icon.1a4ae0c66bda6cca39f7.png",
     "static/media/gtb-logo.png": "/static/media/gtb-logo.da077e386c4869fbe45c.png",
     "static/media/AppFont.otf": "/static/media/AppFont.e7a429ada843101f73b5.otf",
     "static/media/fondo_info.png": "/static/media/fondo_info.f3aa9db97fd2e8af253e.png",
+    "static/media/btn.mp3": "/static/media/btn.28a5ae410a1f4b09aa8f.mp3",
     "static/media/btn-entrar-hover.png": "/static/media/btn-entrar-hover.3fdb402c68d93814bd2e.png",
+    "static/media/btn-hover.mp3": "/static/media/btn-hover.955bf1a016431a718aa2.mp3",
     "index.html": "/index.html",
-    "main.f8992065.css.map": "/static/css/main.f8992065.css.map",
-    "main.25f17ec7.js.map": "/static/js/main.25f17ec7.js.map",
+    "main.3118a6e0.css.map": "/static/css/main.3118a6e0.css.map",
+    "main.009151ec.js.map": "/static/js/main.009151ec.js.map",
     "787.dab6a6fc.chunk.js.map": "/static/js/787.dab6a6fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8992065.css",
-    "static/js/main.25f17ec7.js"
+    "static/css/main.3118a6e0.css",
+    "static/js/main.009151ec.js"
   ]
 }
