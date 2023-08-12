@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import Enter from '../../components/Enter/Enter.component';
+import { Enter } from '../../components/Enter/Enter.component';
+import { Login } from "../../components/Login/Login.component";
+import { Configuration } from "../../components/Configuration/Configuration.component";
 import soundBtnOn from '../../../assets/images/png/soundbtn-on.png';
 import soundBtnOff from '../../../assets/images/png/soundbtn-off.png';
 import mainTheme from '../../../assets/sounds/main-theme.mp3';
@@ -8,84 +10,78 @@ import Preloader from '../../components/Utils/Preloader/Preloader.component';
 import logo from '../../../assets/images/png/WoG-Icon.png';
 import { GlobalStates } from "../../../functions/GlobalStates";
 import { useSelector } from 'react-redux';
-import Adventures from "../../components/Adventures/Adventures.component";
-import Options from "../../components/Options/Options.component";
 import { SoundAlert } from "../../components/Utils/SoundAlert/SoundAlert.component";
+import { HOME } from "../../components/Utils/Constants/const";
+import { Menu } from "../../components/Menu/Menu.component";
 
 function Home() {
-    const player = useRef()
-    const sound = Boolean(localStorage.getItem('sound'));
-    const theme = sound? mainTheme : '';
+    const player = useRef();
+    const sound = false;
+    const theme = sound ? mainTheme : '';
     const [playState, setPlayState] = useState(sound);
     const [mediaTheme, setMediaTheme] = useState(theme);
-    const _preloader_ = useSelector(state=>state.preloader)
-    const _server_ = useSelector(state=>state.aventuras);
-
+    const _preloader_ = useSelector(state => state.preloader)
+    const _server_ = useSelector(state => state.aventuras);
     useEffect(() => {
         setMediaTheme(theme)
         setPlayState(sound)
     }, [theme, sound])
-    
-    GlobalStates('home');
-    
+
+    GlobalStates(HOME);
     return (
-        <div className="home">
-            <div id="preload-images"></div>
-                <AudioPlayer 
-                ref={player} id='main-theme' 
+        <div className="home-body">
+            <AudioPlayer
+                ref={player} id='main-theme'
                 showJumpControls={false}
                 showDownloadProgress={false}
                 showFilledProgress={false}
                 hasDefaultKeyBindings={false}
                 src={mediaTheme}
                 autoPlay={playState}
-                style={{display:'none'}}
-                onListen={()=>{
-                    if (player.current.audio.current.currentTime>=164.55){
-                        return player.current.audio.current.currentTime=89.55
-                    }
-                }}
                 type='audio/mp3'
-                preload='auto' 
-                />
-                <div className="div_home">
-                    <div className="opciones_body">
-                        <div className="aventuras_body">
-                            <div className="enter_body"> 
-                                <Enter />
-                            </div>
-                            <Adventures />
+                preload='auto'
+                style={{ display: 'none' }}
+                onListen={() => {
+                    if (player.current.audio.current.currentTime >= 164.55) {
+                        return player.current.audio.current.currentTime = 89.55
+                    }
+                }} />
+            <div>
+                <div className="options-body">
+                    <div className="login-body">
+                        <div className="enter-body">
+                            <Enter/>
                         </div>
-                        <Options />
-                    </div> 
-                {
-                (_server_)?
-                    ( <><Preloader img={logo} /></> )
-                    :
-                (_preloader_ ) ?
-                    ( <><Preloader img={logo} /></> )
-                    :
-                    ( null )
-                }
+                        <Login/>
+                    </div>
+                    <Configuration/>
                 </div>
-                    <button className="soundBtn" style={{backgroundImage:`url(${soundBtnOff})`}} 
-                    onClick={()=>{
-                        if(mediaTheme==='' && !playState){
-                            document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOn})`
-                            setMediaTheme(mainTheme)
-                        }
-                        else{
-                        document.querySelector('.soundBtn').style.backgroundImage=`url(${soundBtnOff})`
-                        setMediaTheme('')
-                    }}}
-                    onMouseEnter={()=>{
-                        document.querySelector('.soundBtn').style.opacity='1'
-                    }}
-                    ></button>
+                {
+                    (_server_) ?
+                        (<><Preloader img={logo} /></>)
+                        :
+                        (_preloader_) ?
+                            (<><Preloader img={logo} /></>)
+                            :
+                            (null)
+                }
+            </div>
+            <Menu 
+                soundBtnOff={soundBtnOff} 
+                soundBtnOn={soundBtnOn} 
+                mediaTheme={mediaTheme} 
+                setMediaTheme={setMediaTheme} 
+                mainTheme={mainTheme} 
+                playState={playState} />
             {
-                !sound?
-                    <SoundAlert mainTheme={mainTheme} setMediaTheme={setMediaTheme} setPlayState={setPlayState} soundBtnOn={soundBtnOn} soundBtnOff={soundBtnOff} />
-                :   null
+                !sound ?
+                    <SoundAlert 
+                        mainTheme={mainTheme} 
+                        setMediaTheme={setMediaTheme} 
+                        setPlayState={setPlayState} 
+                        soundBtnOn={soundBtnOn} 
+                        soundBtnOff={soundBtnOff} />
+                    : null
             }
         </div>
     )

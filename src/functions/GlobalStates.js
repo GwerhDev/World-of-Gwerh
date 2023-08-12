@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
-import { getAventuras, preloader, preloaderState } from '../middleware/redux/actions';
+import { getAdventures, preloader, preloaderState } from '../middleware/redux/actions';
 import { useEffect } from 'react';
 import { PreloaderStates } from './PreloaderStates';
 
-export function GlobalStates(params) {
+export function GlobalStates(e) {
     const dispatch = useDispatch()
     return useEffect(()=>{
-        PreloaderStates(params)
+        PreloaderStates(e)
         window.onload = setTimeout(() =>
         dispatch(
             preloaderState(50),
@@ -20,6 +20,6 @@ export function GlobalStates(params) {
             preloader(false), 
             ), 4000)
         dispatch(
-            getAventuras()
-    )}, [dispatch, params])
+            getAdventures()
+    )}, [dispatch, e])
 }

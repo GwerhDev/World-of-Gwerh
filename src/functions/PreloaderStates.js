@@ -1,8 +1,7 @@
+import { $d } from "./DocumentCSS";
 
-export async function PreloaderStates(params){
-  const a = params
-  const p = await document.querySelector(a)
-  p?.addEventListener("load", function() {
+export function PreloaderStates(e){
+  $d(e).addEventListener("load", function() {
     console.log("Todos los recursos terminaron de cargar!");
   })
 };

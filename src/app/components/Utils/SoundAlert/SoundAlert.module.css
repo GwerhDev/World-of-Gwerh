@@ -4,8 +4,6 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.795);
-  backdrop-filter: blur(10px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,10 +11,11 @@
 
 .alertContainer{
   border-radius: 15px;
-  box-shadow: 0px 0px 100px black;
   width: 80%;
   height: 80%;
-  background-color: #171717ee;
+  background-color: rgba(20, 12, 6, 0.89);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px black;
   display: flex;
   flex-direction: column;
   justify-content: center;

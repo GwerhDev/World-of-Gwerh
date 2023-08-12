@@ -6,7 +6,8 @@ export const SoundAlert = (props) => {
   return (
     <div className={s.alertBackground} id='soundAlert'>
       <div className={s.alertContainer}>
-        <p>Para disfrutar de la experiencia completa, por favor activa el sonido en tu dispositivo. ¿Quieres activarlo ahora?</p>
+        <p>Para disfrutar de la experiencia completa, por favor activa el sonido en tu dispositivo.</p>
+        <p style={{fontSize: '1.5rem'}}>¿Quieres activarlo ahora?</p>
         <div>
           <button className={s.btn} onClick={() => {
             localStorage.setItem('sound', true)

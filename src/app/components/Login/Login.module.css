@@ -1,0 +1,56 @@
+.btn{
+    width: 250px;
+    height: 30px;
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px #000000a0;
+    background-image: url(../../../assets/images/png/btn-entrar.png);
+    background-position: center;
+    border-color: rgb(255, 255, 255);
+    border-width: 2px;
+    border-radius: 30%;
+    margin-top: 10px;
+}
+
+.inputLogin{
+    width: 250px;
+    margin-bottom: 1rem;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.685);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    color: white;
+}
+
+.inputLogin:active,
+.inputLogin:focus{
+    background-color: rgba(0, 0, 0, 0.884);
+}
+
+.btn:hover{
+    background-image: url(../../../assets/images/png/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;    
+}
+
+.button:hover {
+    background-image: url(../../../assets/images/png/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;    
+}
+
+p{
+    font-family: 'AppFont';
+    color: white;
+    font-weight: 400;
+    font-size: 40px;
+    text-shadow: 2px 2px #000000a0;
+    border: none;
+}
+

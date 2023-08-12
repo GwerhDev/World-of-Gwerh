@@ -1,0 +1,27 @@
+.menuContainer{
+  position: absolute;
+  height: 100%;
+  width: 95px;
+  right: 0px;
+  background-color: rgba(20, 12, 6, 0.89);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px black;
+  opacity: .8;
+  transition-duration: .4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menuContainer:hover{
+  opacity: 1;
+}
+
+.icon{
+  margin-bottom: 2rem;
+}
+
+.iconBack{
+  height: 70px;
+}

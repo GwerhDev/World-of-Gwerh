@@ -1,11 +1,11 @@
-.in{
-    width: 250px;
-    height: 30px;
+.enterButton{
+    padding-left: 150px;
+    padding-right: 150px;
     font-family: 'AppFont';
     color: rgba(255, 255, 255);
     border-radius: 40%;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 30px;
     background-color: black;
     background-image: url(../../../assets/images/png/btn-entrar.png);
     background-position: center;
@@ -19,7 +19,15 @@
     position: relative;
 }
 
-.opt{
+.enterButton:hover{
+    background-image: url(../../../assets/images/png/btn-entrar-hover.png);
+    cursor: pointer;
+    transition-duration: 0.4s;
+    filter: brightness(1.05);
+    scale: 1.01;
+}
+
+.optionButton{
     width: 250px;
     height: 30px;
     font-family: 'AppFont';
@@ -35,7 +43,7 @@
 
 }
 
-.opt:hover {
+.optionButton:hover {
     background-image: url(../../../assets/images/png/btn-entrar-hover.png);
     cursor: pointer;
     transition-duration: 0.4s;
@@ -43,71 +51,9 @@
     scale: 1.01;    
 }
 
-.in:hover{
-    background-image: url(../../../assets/images/png/btn-entrar-hover.png);
-    cursor: pointer;
-    transition-duration: 0.4s;
-    filter: brightness(1.05);
-    scale: 1.01;
-}
-
-.title{
-    width: 500px;
-    z-index: 9999999999999;
-    animation-name: flash;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-.lotr{
-    width: 250px;
-    z-index: 0;
-    animation-name: rot;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-out;
-}
-
-@keyframes rot {
-    0%   {transform: rotate(0deg); scale: 1; opacity: 1;}
-    25%  {opacity: 0.5;}
-    50%  {scale: 1.5; opacity: 1;}
-    75%  {opacity: 0.5;}
-    100% {transform: rotate(-360deg); scale: 1; opacity: 1;}
-}
-
-@keyframes flash {
-    0%   {scale: 1;}
-    5%   {scale: 1.01;filter:brightness(2)}
-    10%  {filter:brightness(1);}
-    15%  {scale: 1;filter:brightness(1)}
-    35%  {filter:brightness(1);}
-    50%  {scale: 0.96;filter:brightness(2)}
-    75%  {filter:brightness(1)}
-    100% {scale: 1}
-}
-
-.div_lotr{
-    width: 100%;
-    z-index: 0;
-}
-
-.div_title{
-    width: 100%;
-    z-index: 999;
-    position: absolute;
-}
 
 .enterContainer{
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.divLogo{
     display: flex;
     flex-direction: column;
     justify-content: center;

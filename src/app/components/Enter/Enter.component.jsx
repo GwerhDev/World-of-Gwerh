@@ -1,42 +1,38 @@
 import React, { useState } from 'react';
-import logo from '../../../assets/images/png/title.png';
-import lotr from '../../../assets/images/png/lotr-ring.png'
 import s from './Enter.module.css';
 import AudioPlayer from 'react-h5-audio-player';
-import { handlerBtnOnClick } from '../../../handlers/handlers';
+import sndBtnHover from '../../../assets/sounds/btn-hover.mp3';
+import sndBtn from '../../../assets/sounds/btn.mp3';
+import { enterButton } from './Enter.functions';
+import { LOGIN } from '../Utils/Constants/const';
+import { Logo } from '../Utils/Logo/Logo.component';
+import { useDispatch } from 'react-redux';
+import { setCurrentPage } from '../../../middleware/redux/actions';
 
-const Enter = () => {
-    const btnHover = "sound/btn-hover.mp3"
-    const btnClick = "sound/btn.mp3"
-    const [url, setUrl] = useState('')
+export const Enter = () => {
+    const [url, setUrl] = useState('');
+    const dispatch = useDispatch();
 
     return (
         <div className={s.enterContainer}>
-            <div className={s.divLogo}>
-                <div className={s.div_title}>
-                    <img className={s.title} src={logo} alt="" />
-                </div>
-                <div className={s.div_lotr}>
-                    <img className={s.lotr} src={lotr} alt="" />
-                </div>
-            </div>
+            <Logo/>
             <ul>
                 <li>
                     <button
-                        className={s.in}
-                        onMouseEnter={() => setUrl(btnHover)}
-                        onClick={() => handlerBtnOnClick(setUrl, btnClick, 'Aventuras')}>
-                        Aventuras
+                        className={s.enterButton}
+                        onMouseEnter={() => setUrl(sndBtnHover)}
+                        onClick={() => enterButton(setUrl, sndBtn, dispatch, setCurrentPage, LOGIN)}>
+                        Entrar
                     </button>
                 </li>
-                <li>
+{/*                 <li>
                     <button
-                        className={s.opt}
-                        onMouseEnter={() => setUrl(btnHover)}
-                        onClick={() => handlerBtnOnClick(setUrl, btnClick, 'Opciones')}>
+                        className={s.optionButton}
+                        onMouseEnter={() => setUrl(sndBtnHover)}
+                        onClick={() => enterButton(setUrl, sndBtn, CONFIGURATION)}>
                         Opciones
                     </button>
-                </li>
+                </li> */}
             </ul>
             <div className='sounds'>
                 <AudioPlayer
@@ -47,5 +43,3 @@ const Enter = () => {
         </div>
     )
 }
-
-export default Enter;

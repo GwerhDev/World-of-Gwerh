@@ -1,4 +1,4 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE } from '../../misc/consts';
 import { URL_API } from '../../../config/config';
 
 export function getTales() {
@@ -11,11 +11,11 @@ export function getTales() {
                 payload: data,
             })
         })
-        .catch(e => console.log(e))
+        .catch(e => console.error(e))
     }
 }
 
-export function getAventuras() {
+export function getAdventures() {
     return function(dispatch) {
         fetch(`${URL_API}/wog/adventures`)
         .then(res => res.json())
@@ -25,7 +25,7 @@ export function getAventuras() {
                 payload: data,
             })
         })
-        .catch(e => console.log(e))
+        .catch(e => console.error(e))
     }
 }
 
@@ -39,7 +39,7 @@ export function getInfo(id) {
                 payload: data
             })
         })
-        .catch(e => console.log(e))
+        .catch(e => console.error(e))
     }
 
 }
@@ -53,6 +53,13 @@ export function preloader(e){
 export function preloaderState(e){
     return {
         type: PRELOADER_STATE,
+        payload: e
+    }
+}
+
+export function setCurrentPage(e) {
+    return {
+        type: SET_PAGE,
         payload: e
     }
 }
