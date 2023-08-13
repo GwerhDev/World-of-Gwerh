@@ -1,4 +1,4 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN } from '../../misc/consts';
 import { URL_API } from '../../../config/config';
 
 export function getTales() {
@@ -41,7 +41,6 @@ export function getInfo(id) {
         })
         .catch(e => console.error(e))
     }
-
 }
 
 export function preloader(e){
@@ -61,5 +60,26 @@ export function setCurrentPage(e) {
     return {
         type: SET_PAGE,
         payload: e
+    }
+}
+
+export function loginAction(username, password) {
+    return function(dispatch){
+        const options = {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        };
+        fetch(`${URL_API}/login`, options)
+        .then(res => res.json())
+        .then(data =>{
+            dispatch({
+                type: LOGIN,
+                payload: data
+            })
+        })
+        .catch(e => console.error(e))
     }
 }

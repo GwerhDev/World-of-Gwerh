@@ -20,6 +20,7 @@ function Home() {
     const theme = sound ? mainTheme : '';
     const [playState, setPlayState] = useState(sound);
     const [mediaTheme, setMediaTheme] = useState(theme);
+    const [showMenu, setShowMenu] = useState(false)
     const _preloader_ = useSelector(state => state.preloader)
     const _server_ = useSelector(state => state.aventuras);
     useEffect(() => {
@@ -66,19 +67,23 @@ function Home() {
                             (null)
                 }
             </div>
-            <Menu 
-                soundBtnOff={soundBtnOff} 
-                soundBtnOn={soundBtnOn} 
-                mediaTheme={mediaTheme} 
-                setMediaTheme={setMediaTheme} 
-                mainTheme={mainTheme} 
-                playState={playState} />
+            <div style={{opacity: showMenu? '1':'0', transitionDuration: '.4s'}}>
+                <Menu 
+                    soundBtnOff={soundBtnOff} 
+                    soundBtnOn={soundBtnOn} 
+                    mediaTheme={mediaTheme} 
+                    setMediaTheme={setMediaTheme}
+                    setPlayState={setPlayState}
+                    mainTheme={mainTheme} 
+                    playState={playState} />
+            </div>
             {
                 !sound ?
                     <SoundAlert 
                         mainTheme={mainTheme} 
                         setMediaTheme={setMediaTheme} 
                         setPlayState={setPlayState} 
+                        setShowMenu={setShowMenu}
                         soundBtnOn={soundBtnOn} 
                         soundBtnOff={soundBtnOff} />
                     : null

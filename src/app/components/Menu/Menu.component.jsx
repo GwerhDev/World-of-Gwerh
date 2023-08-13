@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
 import { setCurrentPage } from '../../../middleware/redux/actions';
 
 export const Menu = (props) => {
-  const { soundBtnOff, soundBtnOn, mediaTheme, setMediaTheme, mainTheme, playState } = props;
+  const { soundBtnOff, soundBtnOn, mediaTheme, setMediaTheme, setPlayState, mainTheme, playState } = props;
   const [url, setUrl] = useState('');
   const currentPage = useSelector(state=> state.currentPage)
   const dispatch = useDispatch()
@@ -30,6 +30,7 @@ export const Menu = (props) => {
             soundBtnOn={soundBtnOn} 
             mediaTheme={mediaTheme} 
             setMediaTheme={setMediaTheme} 
+            setPlayState={setPlayState}
             mainTheme={mainTheme} 
             playState={playState} />
         </div>

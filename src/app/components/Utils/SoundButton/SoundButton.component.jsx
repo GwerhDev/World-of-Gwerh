@@ -1,26 +1,20 @@
 import React from 'react'
+import { ButtonFunction } from './SoundButton.functions';
+import { $d } from '../../../../functions/DocumentCSS';
+import { OPACITY_ACTIVE, OPACITY_DEFAULT } from '../Constants/const';
 
 export const SoundButton = (props) => {
-  const { soundBtnOff, soundBtnOn, mediaTheme, setMediaTheme, mainTheme, playState } = props;
+  const { soundBtnOff, soundBtnOn, mediaTheme, setMediaTheme, setPlayState, mainTheme, playState } = props;
   return (
-      <button
-        className="soundBtn" 
-        style={{ backgroundImage: `url(${soundBtnOff})` }}
-        onClick={() => {
-          if (mediaTheme === '' && !playState) {
-            document.querySelector('.soundBtn').style.backgroundImage = `url(${soundBtnOn})`
-            setMediaTheme(mainTheme)
-          } else {
-            document.querySelector('.soundBtn').style.backgroundImage = `url(${soundBtnOff})`
-            setMediaTheme('')
-          }
-        }}
-        onMouseEnter={() => {
-          document.querySelector('.soundBtn').style.opacity = '1'
-        }}
-        onMouseLeave={() => {
-          document.querySelector('.soundBtn').style.opacity = '.7'
-        }}
-      />
+    <button
+      className="soundBtn"
+      style={{ backgroundImage: `url(${soundBtnOff})` }}
+      onClick={() => {
+        if (mediaTheme === '' && !playState) return ( ButtonFunction(soundBtnOn), setMediaTheme(mainTheme), setPlayState(true));
+        return ( ButtonFunction(soundBtnOff), setMediaTheme(''), setPlayState(false));
+      }}
+      onMouseEnter={() => { $d('.soundBtn').style.opacity = OPACITY_ACTIVE }}
+      onMouseLeave={() => { $d('.soundBtn').style.opacity = OPACITY_DEFAULT }}
+    />
   )
 }

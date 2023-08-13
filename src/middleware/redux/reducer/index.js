@@ -1,5 +1,5 @@
 import { ENTER } from '../../../app/components/Utils/Constants/const';
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE} from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN } from '../../misc/consts';
 
 const initialState = {
     tales: [],
@@ -7,7 +7,8 @@ const initialState = {
     adventures: [],
     preloader: true,
     preloaderState: 10,
-    currentPage: ENTER
+    currentPage: ENTER,
+    logged: false,
 }
 
 export default function rootReducer(state = initialState, action){
@@ -41,6 +42,11 @@ export default function rootReducer(state = initialState, action){
             return {
                 ...state,
                 currentPage: action.payload
+            }
+        case LOGIN: 
+            return {
+                ...state,
+                logged: action.payload
             }
         default:
             return {...state}
