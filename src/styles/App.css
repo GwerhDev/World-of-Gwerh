@@ -140,7 +140,24 @@ ul{
   position: fixed;
 }
 
-.login-container, .options-container{
+.config-container{
+  width: 75%;
+  height: 65%;
+}
+
+.options-container{
+  padding: 0;
+  transform: translateY(-100vh);
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-container{
   transform: translateY(-100vh);
   height: 100%;
   opacity: 0;

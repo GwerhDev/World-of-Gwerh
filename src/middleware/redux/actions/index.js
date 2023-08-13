@@ -1,4 +1,4 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_PLAYER, SHOW_MENU } from '../../misc/consts';
 import { URL_API } from '../../../config/config';
 
 export function getTales() {
@@ -60,6 +60,20 @@ export function setCurrentPage(e) {
     return {
         type: SET_PAGE,
         payload: e
+    }
+}
+
+export function setMenuStates(show, type) {
+    return {
+        type: SHOW_MENU,
+        payload: { show, type }
+    }
+}
+
+export function setSoundPlayer(playState, src) {
+    return {
+        type: SOUND_PLAYER,
+        payload: { playState, src }
     }
 }
 

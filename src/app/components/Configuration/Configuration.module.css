@@ -1,0 +1,17 @@
+.configContainer{
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  overflow-y: auto;
+}
+
+.configContainer input{
+  width: 50%;
+}
+
+.configContainer input:hover{
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import { ENTER } from '../../../app/components/Utils/Constants/const';
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_PLAYER, SHOW_MENU } from '../../misc/consts';
 
 const initialState = {
     tales: [],
@@ -8,11 +8,32 @@ const initialState = {
     preloader: true,
     preloaderState: 10,
     currentPage: ENTER,
-    logged: false,
+    user: {
+        logged: false,
+        token: ''
+    },
+    soundPlayer: {
+        playState: false,
+        src: ''
+    },
+    menu: {
+        show: false,
+        type: ''
+    }
 }
 
 export default function rootReducer(state = initialState, action){
     switch (action.type) {
+        case SOUND_PLAYER:
+            return {
+                ...state,
+                soundPlayer: action.payload
+            }
+        case SHOW_MENU:
+            return {
+                ...state,
+                menu: action.payload
+            }
         case PRELOADER:
             return {
                 ...state,

@@ -5,6 +5,9 @@ export const GET_INFO = 'GET_INFO';
 export const GET_ADVENTURES = 'GET_ADVENTURES';
 export const SET_PAGE = 'SET_PAGE';
 export const LOGIN = 'LOGIN';
+export const SOUND_PLAYER = 'SOUND_PLAYER';
+export const SHOW_MENU = 'SHOW_MENU';
+
 export const LIST_IMAGES = [
     {
         home:

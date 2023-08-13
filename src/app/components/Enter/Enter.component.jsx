@@ -25,14 +25,6 @@ export const Enter = () => {
                         Entrar
                     </button>
                 </li>
-{/*                 <li>
-                    <button
-                        className={s.optionButton}
-                        onMouseEnter={() => setUrl(sndBtnHover)}
-                        onClick={() => enterButton(setUrl, sndBtn, CONFIGURATION)}>
-                        Opciones
-                    </button>
-                </li> */}
             </ul>
             <div className='sounds'>
                 <AudioPlayer

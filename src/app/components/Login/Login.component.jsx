@@ -23,7 +23,7 @@ export const Login = () => {
                         onClick={()=>{ 
                             setUrl(sndBtn)
                             if(LoginFunction()){
-                                history.push('/adventures')
+                                history.push('/account/1')
                             }}}>
                             Iniciar sesión
                     </button></li>
