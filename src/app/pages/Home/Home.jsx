@@ -12,6 +12,7 @@ import Preloader from '../../components/Utils/Preloader/Preloader.component';
 function Home() {
     const _preloader_ = useSelector(state => state.preloader);
     const _server_ = useSelector(state => state.aventuras);
+    const { showSoundAlert } = useSelector(state => state.soundAlert);
 
     GlobalStates(HOME);
 
@@ -38,7 +39,9 @@ function Home() {
                 }
             </div>
             <div>
-                <SoundAlert/>
+                {
+                    showSoundAlert? <SoundAlert/> : null
+                }
             </div>
         </div>
     )

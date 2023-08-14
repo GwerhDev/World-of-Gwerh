@@ -6,4 +6,6 @@ export const ACCOUNT = 'account';
 // STYLE CLASSES
 export const OPACITY_DEFAULT = '.7';
 export const OPACITY_ACTIVE = '1';
-export const HOME = '.home-body'
+export const OPACITY_INACTIVE = '0';
+export const TRANSITION_DURATION_DEFAULT = '.4s';
+export const HOME = '.home-body';

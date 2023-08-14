@@ -18,13 +18,13 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const Menu = () => {
   const [url, setUrl] = useState('');
-  const { show, type } = useSelector(state => state.menu);
+  const { showMenu } = useSelector(state => state.menu);
   const currentPage = useSelector(state=> state.currentPage);
   const dispatch = useDispatch();
   const history = useHistory();
 
   return (
-    <div className={s.menuContainer} style={{ opacity: show? '1':'0', transitionDuration: '.4s' }}>
+    <div className={s.menuContainer} style={{ opacity: showMenu? '1':'0', transitionDuration: '.4s' }}>
       <div>
         <div className={s.icon}>
           <SoundButton/>
@@ -39,14 +39,14 @@ export const Menu = () => {
           <img 
             className="icon"
             onMouseEnter={() => setUrl(sndBtnHover)}
-            onClick={() =>{ return type === ACCOUNT? (history.push('/')) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, CONFIGURATION)} }
+            onClick={() =>{ return currentPage === ACCOUNT? (history.push('/')) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, CONFIGURATION)} }
             src={configIcon} alt="" />
         </div>
-        <div className="icon">
-        <img 
-          className="icon" 
-          onMouseEnter={() => setUrl(sndBtnHover)}
-          src={gwerhIcon} alt="" />
+        <div className={s.icon}>
+          <img 
+            className="icon" 
+            onMouseEnter={() => setUrl(sndBtnHover)}
+            src={gwerhIcon} alt="" />
         </div>
       </div>
         <div className={s.iconBack} id='iconBack'>
@@ -55,15 +55,12 @@ export const Menu = () => {
           <img 
             className="icon" 
             onMouseEnter={() => setUrl(sndBtnHover)}
-            onClick={() =>{ return type === ACCOUNT? (history.push('/'),dispatch(setCurrentPage(ENTER))) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, ENTER)} }
+            onClick={() =>{ return currentPage === ACCOUNT? (history.push('/'),dispatch(setCurrentPage(ENTER))) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, ENTER)} }
             src={backIcon}alt="" />
           }
         </div>
       <div className='sounds'>
-        <AudioPlayer
-          src={url}
-          onEnded={e => setUrl('')} 
-        />
+        <AudioPlayer src={url} onEnded={e => setUrl('')} />
       </div>
     </div>
   )

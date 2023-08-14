@@ -17,6 +17,7 @@
     z-index: 999;
     margin-top: 100px; 
     position: relative;
+    transition-duration: .4s;
 }
 
 .enterButton:hover{

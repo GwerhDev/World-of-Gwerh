@@ -15,7 +15,7 @@ export const SoundButton = () => {
   return (
     <button
       className="soundBtn"
-      style={{ backgroundImage: `url(${soundBtnOff})` }}
+      style={{ backgroundImage: `url(${soundBtnOff})`, width:'50px', height:'50px' }}
       onClick={() => {
         if (!playState) return ( ButtonFunction(soundBtnOn), dispatch(setSoundPlayer(true, mainTheme)));
         return ( ButtonFunction(soundBtnOff), dispatch(setSoundPlayer(false, '')));

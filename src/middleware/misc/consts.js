@@ -7,6 +7,7 @@ export const SET_PAGE = 'SET_PAGE';
 export const LOGIN = 'LOGIN';
 export const SOUND_PLAYER = 'SOUND_PLAYER';
 export const SHOW_MENU = 'SHOW_MENU';
+export const SOUND_ALERT = 'SOUND_ALERT';
 
 export const LIST_IMAGES = [
     {
