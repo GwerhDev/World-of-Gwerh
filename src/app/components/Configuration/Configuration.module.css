@@ -2,10 +2,18 @@
   color: white;
   font-size: 25px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding-left: 5rem;
   padding-right: 5rem;
   overflow-y: auto;
+}
+
+.configContainer li {
+  margin-bottom: 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 
 .configContainer input{

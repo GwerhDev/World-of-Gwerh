@@ -18,10 +18,10 @@ function App() {
             <Route path='/account/:id'>
               <Account/>
             </Route>
-            <Route path='/adventures'>
+            <Route exact path='/adventures'>
               <Adventures/>
             </Route>
-            <Route path='/adventures/gwerh-the-bard'>
+            <Route exact path='/adventures/gwerh-the-bard'>
               <GwerhTheBard/>
             </Route>
           </Switch>

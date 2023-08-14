@@ -36,6 +36,7 @@ const GwerhTheBard = () => {
     }
     const talesList = useSelector(state => state.tales)
     
+
     GwerhStates()
     GlobalStates('gwerh_body')
 
@@ -48,7 +49,7 @@ const GwerhTheBard = () => {
             ( null )
         }
             <Link to='/'> <button className={s.out} 
-            onClick={()=>{return (
+            onClick={() => { return (
                 dispatch(preloaderState(10)),
                 dispatch(preloader(true)),
                 document.querySelector('.icon').style.bottom="10px"

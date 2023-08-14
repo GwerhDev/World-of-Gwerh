@@ -28,3 +28,31 @@ code {
     monospace;
 }
 
+/* Cambiar la forma del círculo por un rombo */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+/* Definir el color de la barra llena */
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+/*   background: #572417;
+ */  border: none;
+  border-radius: 50%;
+}
+
+/* Definir el color de la barra vacía */
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-moz-range-track,
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+}
