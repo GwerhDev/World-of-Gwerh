@@ -28,6 +28,7 @@ function Home() {
                     </div>
                     <Configuration/>
                 </div>
+                <div> { showSoundAlert? <SoundAlert/> : null } </div>
                 {
                     (_server_) ?
                         (<><Preloader img={logo} /></>)
@@ -36,11 +37,6 @@ function Home() {
                             (<><Preloader img={logo} /></>)
                             :
                             (null)
-                }
-            </div>
-            <div>
-                {
-                    showSoundAlert? <SoundAlert/> : null
                 }
             </div>
         </div>
