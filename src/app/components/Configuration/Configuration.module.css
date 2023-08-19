@@ -23,3 +23,9 @@
 .configContainer input:hover{
   cursor: pointer;
 }
+
+.volumenNumber{
+  width: 50px;
+  display: flex;
+  justify-content: center;
+}

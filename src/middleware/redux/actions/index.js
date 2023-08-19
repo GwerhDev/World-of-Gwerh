@@ -1,4 +1,4 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_PLAYER, SHOW_MENU, SOUND_ALERT } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME } from '../../misc/consts';
 import { URL_API } from '../../../config/config';
 
 export function getTales() {
@@ -77,10 +77,31 @@ export function setMenuStates(showMenu, type) {
     }
 }
 
-export function setSoundPlayer(playState, src) {
+export function setSoundMusic(playState, src) {
     return {
-        type: SOUND_PLAYER,
+        type: SOUND_MUSIC,
         payload: { playState, src }
+    }
+}
+
+export function setSoundMusicVolume(volume) {
+    return {
+        type: SOUND_MUSIC_VOLUME,
+        payload: volume
+    }
+}
+
+export function setSoundButtons(playState, src) {
+    return {
+        type: SOUND_BUTTONS,
+        payload: { playState, src }
+    }
+}
+
+export function setSoundButtonsVolume(volume) {
+    return {
+        type: SOUND_BUTTONS_VOLUME,
+        payload: volume
     }
 }
 

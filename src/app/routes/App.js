@@ -25,8 +25,8 @@ function App() {
               <GwerhTheBard/>
             </Route>
           </Switch>
-          <Menu/>
-          <SoundPLayer/>
+        <Menu/>
+        <SoundPLayer/>
       </div>
   );
 }

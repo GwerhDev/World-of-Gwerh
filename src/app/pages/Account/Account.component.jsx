@@ -1,16 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCurrentPage, setMenuStates } from '../../../middleware/redux/actions';
-import { ACCOUNT } from '../../components/Utils/Constants/const';
+import { SELECTION } from '../../components/Utils/Constants/const';
+import { Selection } from '../../components/Selection/Selection.component';
 
 export const Account = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setMenuStates(true, ACCOUNT))
-    dispatch(setCurrentPage(ACCOUNT))
+    dispatch(setMenuStates(true, SELECTION))
+    dispatch(setCurrentPage(SELECTION))
   },[dispatch])
+  
   return (
     <div>
+      <Selection />
     </div>
   )
 }

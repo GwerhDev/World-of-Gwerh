@@ -1,7 +1,6 @@
 import { $d } from "../../../../functions/DocumentCSS"
 
-export function SoundFunction(soundBtn) {
-  localStorage.setItem('sound', false)
-  $d('.soundBtn').style.backgroundImage = `url(${soundBtn})`
+export function SoundFunction(e) {
+  localStorage.setItem('sound', e)
   $d('#soundAlert').style.display = 'none'
 }

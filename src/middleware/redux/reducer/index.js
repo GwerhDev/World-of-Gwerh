@@ -1,5 +1,5 @@
 import { ENTER } from '../../../app/components/Utils/Constants/const';
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_PLAYER, SHOW_MENU, SOUND_ALERT } from '../../misc/consts';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME } from '../../misc/consts';
 
 const initialState = {
     tales: [],
@@ -12,9 +12,23 @@ const initialState = {
         logged: false,
         token: ''
     },
-    soundPlayer: {
-        playState: false,
-        src: ''
+    sound: {
+        activated: false,
+        music: {
+            playState: false,
+            src: '',
+            volume: 100,
+        },
+        buttons: {
+            playState: false,
+            src: '',
+            volume: 100,
+        },
+        environment: {
+            playState: false,
+            src: '',
+            volume: 100,
+        },
     },
     menu: {
         showMenu: false,
@@ -32,10 +46,51 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 soundAlert: action.payload
             }
-        case SOUND_PLAYER:
+        case SOUND_MUSIC:
             return {
                 ...state,
-                soundPlayer: action.payload
+                sound: {
+                    ...state.sound,
+                    music: {
+                        ...state.sound.music,
+                        playState: action.payload.playState,
+                        src: action.payload.src,
+                    }
+                }
+            }
+        case SOUND_MUSIC_VOLUME:
+            return {
+                ...state,
+                sound: {
+                    ...state.sound,
+                    music: {
+                        ...state.sound.music,
+                        volume: action.payload
+                    }
+                }
+            }
+        case SOUND_BUTTONS:
+            return {
+                ...state,
+                sound: {
+                    ...state.sound,
+                    buttons: {
+                        ...state.sound.buttons,
+                        playState: action.payload.playState,
+                        src: action.payload.src,
+                    }
+                }
+            }
+        case SOUND_BUTTONS_VOLUME:
+            return {
+                ...state,
+                sound: {
+                    ...state.sound,
+                    buttons: {
+                        ...state.sound.buttons,
+                        volume: action.payload
+                    }
+                }
             }
         case SHOW_MENU:
             return {

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 export const SoundPLayer = () => {
   const player = useRef();
-  const { playState, src } = useSelector(state => state.soundPlayer);
+  const { playState, src, volume } = useSelector(state => state.sound.music);
   return (
     <div>
       <AudioPlayer
@@ -20,10 +20,12 @@ export const SoundPLayer = () => {
         type='audio/mp3'
         preload='auto'
         style={{ display: 'none' }}
+        volume={volume/100}
         onListen={() => {
-            if (player.current.audio.current.currentTime >= 164.55) {
-                return player.current.audio.current.currentTime = 89.55
-            }
+          player.current.audio.current.volume = volume/100;
+          if (player.current.audio.current.currentTime >= 164.55) {
+            return player.current.audio.current.currentTime = 89.55
+          }
         }} />
     </div>
   )

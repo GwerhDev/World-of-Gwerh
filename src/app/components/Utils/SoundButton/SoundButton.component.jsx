@@ -1,27 +1,22 @@
 import React from 'react'
-import { ButtonFunction } from './SoundButton.functions';
-import { $d } from '../../../../functions/DocumentCSS';
-import { OPACITY_ACTIVE, OPACITY_DEFAULT } from '../Constants/const';
+import AudioPlayer from 'react-h5-audio-player';
+import soundBtnHover from '../../../../assets/sounds/btn-hover.mp3';
+import soundBtnClick from '../../../../assets/sounds/btn.mp3';
+import { SOUND_BUTTON_CLICK, SOUND_BUTTON_HOVER } from '../Constants/const';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSoundPlayer } from '../../../../middleware/redux/actions';
-import mainTheme from '../../../../assets/sounds/main-theme.mp3';
-import soundBtnOn from '../../../../assets/images/png/soundbtn-on.png';
-import soundBtnOff from '../../../../assets/images/png/soundbtn-off.png';
-
+import { setSoundButtons } from '../../../../middleware/redux/actions';
 
 export const SoundButton = () => {
   const dispatch = useDispatch();
-  const { playState } = useSelector(state => state.soundPlayer)
+  const { playState, src, volume } = useSelector(state => state.sound.buttons)
   return (
-    <button
-      className="soundBtn"
-      style={{ backgroundImage: `url(${soundBtnOff})`, width:'50px', height:'50px' }}
-      onClick={() => {
-        if (!playState) return ( ButtonFunction(soundBtnOn), dispatch(setSoundPlayer(true, mainTheme)));
-        return ( ButtonFunction(soundBtnOff), dispatch(setSoundPlayer(false, '')));
-      }}
-      onMouseEnter={() => { $d('.soundBtn').style.opacity = OPACITY_ACTIVE }}
-      onMouseLeave={() => { $d('.soundBtn').style.opacity = OPACITY_DEFAULT }}
-    />
+    <div className='sounds'>
+      <AudioPlayer
+        src={src === SOUND_BUTTON_HOVER? soundBtnHover : src === SOUND_BUTTON_CLICK? soundBtnClick : null}
+        autoPlay={playState}
+        volume={volume/100}
+        onEnded={() => dispatch(setSoundButtons(false, ''))} 
+      />
+    </div>
   )
 }
