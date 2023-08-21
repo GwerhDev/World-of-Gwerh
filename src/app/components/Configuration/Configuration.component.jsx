@@ -19,21 +19,21 @@ export const Configuration = () => {
                         <span className='subtitle'>Sonido</span>
                     </div>
                     <li>
-                        <span>General</span>
+                        <span className={s.optionName}>General</span>
                         <input type="checkbox" value={music.playState} checked={music.playState} onChange={() => dispatch(setSoundMusic(!music.playState, !music.playState? mainTheme : ''))} />
                         <div className={s.volumenNumber}>
                             <span>{music.playState? 'Activado' : 'Desactivado'}</span>
                         </div>
                     </li>
                     <li>
-                        <span>Música</span>
+                        <span className={s.optionName}>Música</span>
                         <input type="range" min="0" max="100" value={music.volume} onChange={e => dispatch(setSoundMusicVolume(e.target.value))} />
                         <div className={s.volumenNumber}>
                             <span>{music.volume}%</span>
                         </div>
                     </li>
                     <li>
-                        <span>Botones</span>
+                        <span className={s.optionName}>Botones</span>
                         <input type="range" min="0" max="100" value={buttons.volume} onChange={e => dispatch(setSoundButtonsVolume(e.target.value))} />
                         <div className={s.volumenNumber}>
                             <span>{buttons.volume}%</span>
