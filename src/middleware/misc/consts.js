@@ -1,3 +1,4 @@
+export const DEVELOPMENT = "development";
 export const PRELOADER = 'PRELOADER';
 export const PRELOADER_STATE = 'PRELOADER_STATE';
 export const GET_TALES = 'GET_TALES';
@@ -13,6 +14,7 @@ export const SOUND_BUTTONS_VOLUME = 'SOUND_BUTTONS_VOLUME';
 export const SOUND_ENVIRONMENT_VOLUME = 'SOUND_ENVIRONMENT_VOLUME';
 export const SHOW_MENU = 'SHOW_MENU';
 export const SOUND_ALERT = 'SOUND_ALERT';
+export const SET_CHARACTER = 'SER_CHARACTER'
 
 export const LIST_IMAGES = [
     {

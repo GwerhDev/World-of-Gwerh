@@ -1,0 +1,72 @@
+@font-face {
+  font-family: WoG;
+  src: url('../assets/fonts/WoG.ttf')
+}
+
+@font-face {
+  font-family: AppFont;
+  src: url('../assets/fonts/AppFont.otf')
+}
+
+@font-face {
+  font-family: Bebas Neue;
+  src: url('../assets/fonts/BebasNeue.otf');
+}
+
+:root {
+  --color-background: rgb(45, 45, 45)
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  background-color: var(--color-background);
+  font-family: AppFont;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-position: left;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Cambiar la forma del círculo por un rombo */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+/* Definir el color de la barra llena */
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+/*   background: #572417;
+ */  border: none;
+  border-radius: 50%;
+}
+
+/* Definir el color de la barra vacía */
+
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-moz-range-track,
+input[type="range"]::-ms-track {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+}
+
+:link, :visited{
+  text-decoration: none;
+  color: black;
+}

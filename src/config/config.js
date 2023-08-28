@@ -1,1 +1,1 @@
-export const URL_API = 'https://terminalkiller.fly.dev'
+export const environment = process.env.NODE_ENV;

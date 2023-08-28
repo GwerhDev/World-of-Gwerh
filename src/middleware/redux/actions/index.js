@@ -1,5 +1,5 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME } from '../../misc/consts';
-import { URL_API } from '../../../config/config';
+import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER } from '../../misc/consts';
+import { URL_API } from '../../config/config';
 
 export function getTales() {
     return function(dispatch) {
@@ -123,5 +123,12 @@ export function loginAction(username, password) {
             })
         })
         .catch(e => console.error(e))
+    }
+}
+
+export function setCharacter(e) {
+    return {
+        type: SET_CHARACTER,
+        payload: e
     }
 }
