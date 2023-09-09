@@ -7,6 +7,7 @@ import { SoundPLayer } from '../components/Utils/SoundPlayer/SoundPlayer.compone
 import { Account } from '../pages/Account/Account.component';
 import { Menu } from '../components/Menu/Menu.component';
 import { OpenWorld } from '../pages/OpenWorld/OpenWorld';
+import { Auth } from '../pages/Auth/Auth';
 
 function Router() {
   return (
@@ -14,6 +15,9 @@ function Router() {
           <Switch>
             <Route exact path='/'>
               <Home/> 
+            </Route>
+            <Route path='/auth'>
+              <Auth/> 
             </Route>
             <Route path='/account/:id'>
               <Account/>

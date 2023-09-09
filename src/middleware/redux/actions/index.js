@@ -128,7 +128,7 @@ export function setSoundButtonsVolume(volume) {
     }
 }
 
-export function loginAction(username, password) {
+export function innerLogin(username, password, history) {
     return function(dispatch){
         const options = {
             method: 'POST',
@@ -137,7 +137,22 @@ export function loginAction(username, password) {
               'Content-Type': 'application/json'
             }
         };
-        fetch(`${URL_API}/login`, options)
+        fetch(`${URL_API}/inner-login`, options)
+        .then(res => res.json())
+        .then(data =>{
+            dispatch({
+                type: LOGIN,
+                payload: data
+            })
+            data.logged && data.token && history.push(`/auth?token=${data.token}`)
+        })
+        .catch(e => console.error(e))
+    }
+}
+
+export function authentication(token) {
+    return function(dispatch){
+        fetch(`${URL_API}/auth/account/${token}`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
@@ -146,6 +161,7 @@ export function loginAction(username, password) {
             })
         })
         .catch(e => console.error(e))
+    
     }
 }
 

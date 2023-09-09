@@ -16,7 +16,6 @@ const initialState = {
     },
     user: {
         logged: false,
-        token: ''
     },
     sound: {
         activated: false,
@@ -146,7 +145,7 @@ export default function rootReducer(state = initialState, action){
         case LOGIN: 
             return {
                 ...state,
-                logged: action.payload
+                user: action.payload
             }
         default:
             return {...state}
