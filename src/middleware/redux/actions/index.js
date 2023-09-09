@@ -150,7 +150,7 @@ export function innerLogin(username, password, history) {
     }
 }
 
-export function authentication(token) {
+export function authentication(token, history) {
     return function(dispatch){
         fetch(`${URL_API}/auth/account/${token}`)
         .then(res => res.json())
@@ -159,6 +159,7 @@ export function authentication(token) {
                 type: LOGIN,
                 payload: data
             })
+            data?._id && history.push(`/account/${data._id}`)
         })
         .catch(e => console.error(e))
     
