@@ -26,6 +26,9 @@ body {
   justify-content: center;
   overflow-y: hidden;
   background-color: var(--color-background);
+  background-image: url(../assets/images/png/cont-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: AppFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

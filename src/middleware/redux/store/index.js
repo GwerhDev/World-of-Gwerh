@@ -3,12 +3,13 @@ import rootReducer from '../reducer';
 import thunkMiddleware from 'redux-thunk';
 import thunk from 'redux-thunk';
 import { DEVELOPMENT } from '../../misc/consts';
+import { environment } from '../../../environment';
 
 
 var store = {};
 const composeEnhancer = window.REDUX_DEVTOOLS_EXTENSIONS_COMPOSE || compose;
 
-if(process.env.NODE_ENV === DEVELOPMENT){
+if(environment === DEVELOPMENT){
     store = createStore(
         rootReducer,
         compose(

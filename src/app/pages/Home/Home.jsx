@@ -4,17 +4,16 @@ import { Enter } from '../../components/Enter/Enter.component';
 import { Login } from "../../components/Login/Login.component";
 import { SoundAlert } from "../../components/Utils/SoundAlert/SoundAlert.component";
 import { Configuration } from "../../components/Configuration/Configuration.component";
-import { GlobalStates } from "../../../functions/GlobalStates";
+import { ServerConnection } from "../../../functions/ServerConnection";
 import { HOME } from "../../components/Utils/Constants/const";
 import logo from '../../../assets/images/png/WoG-Icon.png';
 import Preloader from '../../components/Utils/Preloader/Preloader.component';
 
 function Home() {
     const _preloader_ = useSelector(state => state.preloader);
-    const _server_ = useSelector(state => state.aventuras);
     const { showSoundAlert } = useSelector(state => state.soundAlert);
 
-    GlobalStates(HOME);
+    ServerConnection(HOME);
 
     return (
         <div className="home-body">
@@ -30,13 +29,7 @@ function Home() {
                 </div>
                 <div> { showSoundAlert? <SoundAlert/> : null } </div>
                 {
-                    (_server_) ?
-                        (<><Preloader img={logo} /></>)
-                        :
-                        (_preloader_) ?
-                            (<><Preloader img={logo} /></>)
-                            :
-                            (null)
+                    _preloader_? <Preloader img={logo} /> : null
                 }
             </div>
         </div>

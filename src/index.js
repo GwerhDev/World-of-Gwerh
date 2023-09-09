@@ -1,4 +1,4 @@
-import './styles/app.css';
+import './styles/globals.css';
 import './styles/root.css';
 import React from 'react';
 import Router from './app/routes/Router';

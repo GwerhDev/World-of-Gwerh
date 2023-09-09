@@ -68,17 +68,6 @@ h3 {
   text-decoration: none;
 }
 
-.Preloader {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(45, 45, 45);
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  z-index: 999999999999999999999;
-}
-
 .soundBtn{
   width: 70px;
   height: 70px;

@@ -13,7 +13,7 @@ import iconInteract from '../../../assets/images/png/icon-interact.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { GwerhStates } from '../../../functions/GwerhStates';
 import { preloader, preloaderState } from '../../../middleware/redux/actions';
-import { GlobalStates } from '../../../functions/GlobalStates';
+import { ServerConnection } from '../../../functions/ServerConnection';
 import Preloader from '../../components/Utils/Preloader/Preloader.component';
 import { 
     handlerInteractOnClick, 
@@ -38,7 +38,7 @@ const GwerhTheBard = () => {
     
 
     GwerhStates()
-    GlobalStates('gwerh_body')
+    ServerConnection('gwerh_body')
 
     return (
         <div className='gwerh_body'>

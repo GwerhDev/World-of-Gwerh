@@ -1,9 +1,32 @@
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER } from '../../misc/consts';
-import { URL_API } from '../../config/config';
+import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION } from '../../misc/consts';
+import { URL_API } from '../../config';
+import { messages } from '../../misc/messages';
+
+export function serverConnection() {
+    return function(dispatch) {
+        fetch(`${URL_API}/`)
+        .then(res => res.json())
+        .then(data => {
+            dispatch({
+                type: SERVER_CONNECTION,
+                payload: data
+            })
+        })
+        .catch(e => {
+            dispatch({
+                type: SERVER_CONNECTION,
+                payload: {
+                    status: false,
+                    message: messages.server.errorConnectingServer
+                }
+            })
+        })
+    }
+}
 
 export function getTales() {
     return function(dispatch) {
-        fetch(`${URL_API}/wog/tales`)
+        fetch(`${URL_API}/get-tales`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
@@ -17,7 +40,7 @@ export function getTales() {
 
 export function getAdventures() {
     return function(dispatch) {
-        fetch(`${URL_API}/wog/adventures`)
+        fetch(`${URL_API}/get-adventures`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
@@ -29,13 +52,13 @@ export function getAdventures() {
     }
 }
 
-export function getInfo(id) { 
+export function getAccount(id) { 
     return function(dispatch){
-        fetch(`${URL_API}/wog/${id}`)
+        fetch(`${URL_API}/account/${id}`)
         .then(res => res.json())
         .then(data =>{
             dispatch({
-                type: GET_INFO,
+                type: GET_ACCOUNT,
                 payload: data
             })
         })

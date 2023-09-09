@@ -1,5 +1,6 @@
 import { ENTER } from '../../../app/components/Utils/Constants/const';
-import { GET_TALES, GET_INFO, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER } from '../../misc/consts';
+import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION } from '../../misc/consts';
+import { messages } from '../../misc/messages';
 
 const initialState = {
     tales: [],
@@ -9,6 +10,10 @@ const initialState = {
     preloaderState: 10,
     currentPage: ENTER,
     currentCharacter: {},
+    server: {
+        status: false,
+        message: messages.server.callingServer
+    },
     user: {
         logged: false,
         token: ''
@@ -42,6 +47,11 @@ const initialState = {
 
 export default function rootReducer(state = initialState, action){
     switch (action.type) {
+        case SERVER_CONNECTION:
+            return {
+                ...state,
+                server: action.payload
+            }
         case SET_CHARACTER:
             return {
                 ...state,
@@ -123,7 +133,7 @@ export default function rootReducer(state = initialState, action){
                 ...state,
                 tales: action.payload.reverse()
             }
-        case GET_INFO:
+        case GET_ACCOUNT:
             return {
                 ...state,
                 detail: action.payload
