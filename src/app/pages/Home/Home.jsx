@@ -27,11 +27,19 @@ function Home() {
                     </div>
                     <Configuration/>
                 </div>
-                <div> { showSoundAlert? <SoundAlert/> : null } </div>
-                {
-                    _preloader_? <Preloader img={logo} /> : null
-                }
+                <div>
+                    { 
+                        showSoundAlert
+                        ? <SoundAlert/> 
+                        : null 
+                    } 
+                </div>
             </div>
+                {
+                    _preloader_
+                    ? <Preloader img={logo} /> 
+                    : null
+                }
         </div>
     )
 }

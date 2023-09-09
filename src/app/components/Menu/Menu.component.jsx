@@ -49,12 +49,13 @@ export const Menu = () => {
       </div>
       <div className={s.iconBack} id='iconBack'>
         {
-          currentPage === ENTER ? null :
-            <img
-              className="icon"
-              onMouseEnter={() => setUrl(sndBtnHover)}
-              onClick={() => { return currentPage === SELECTION ? (history.push('/'), dispatch(setCurrentPage(ENTER))) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, ENTER) }}
-              src={backIcon} alt="" />
+          currentPage === ENTER 
+          ? null 
+          : <img
+            className="icon"
+            onMouseEnter={() => setUrl(sndBtnHover)}
+            onClick={() => { return currentPage === SELECTION ? (history.push('/'), dispatch(setCurrentPage(ENTER))) : menuButton(setUrl, sndBtn, dispatch, setCurrentPage, ENTER) }}
+            src={backIcon} alt="" />
         }
       </div>
       <div className='sounds'>
