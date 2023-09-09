@@ -5,21 +5,17 @@ import sndBtnHover from '../../../assets/sounds/btn-hover.mp3';
 import sndBtn from '../../../assets/sounds/btn.mp3';
 import { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { innerLogin } from '../../../middleware/redux/actions';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { handleInnerLogin } from '../../../handlers/forms';
 
 export const Login = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const player = useRef();
     const { volume } = useSelector(state => state.sound.buttons);
     const [url, setUrl] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const player = useRef();
-    const dispatch = useDispatch();
-    const history = useHistory();
-
-    function handleInnerLogin(){
-        dispatch(innerLogin(username, password, history));
-    }
 
     return (
         <div className='login-container'>    
@@ -34,7 +30,7 @@ export const Login = () => {
                             onMouseEnter={()=> setUrl(sndBtnHover)}
                             onClick={()=>{ 
                                 setUrl(sndBtn)
-                                handleInnerLogin()
+                                handleInnerLogin(username, password, history, dispatch)
                         }}>
                             Iniciar sesión
                         </button>

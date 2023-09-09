@@ -49,3 +49,7 @@
   filter: brightness(1.05);
   scale: 1.01;
 }
+
+span {
+  color: white;
+}

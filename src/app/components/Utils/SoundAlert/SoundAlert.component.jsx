@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './SoundAlert.module.css'
 import { SoundFunction } from './SoundAlert.functions';
 import { useDispatch } from 'react-redux';
 import { setMenuStates, setSoundALertStates, setSoundMusic } from '../../../../middleware/redux/actions';
 import mainTheme from '../../../../assets/sounds/main-theme.mp3';
+import { handleShowAgainSoundAlert } from '../../../../handlers/forms';
 
 export const SoundAlert = () => {
   const dispatch = useDispatch();
+  const [showAgain, setShowAgain] = useState(false);
 
   return (
     <div className={s.alertBackground} id='soundAlert'>
@@ -33,6 +35,10 @@ export const SoundAlert = () => {
             No
           </button>
         </div>
+        <span>
+          <input type="checkbox" id="soundAlertCheckbox" value={showAgain} onChange={(e) => { return (setShowAgain(!showAgain), handleShowAgainSoundAlert(showAgain, dispatch))}} className={s.checkbox} />  
+          No volver a mostrar este mensaje
+        </span>
       </div>
     </div>
   )

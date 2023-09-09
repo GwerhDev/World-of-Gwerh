@@ -17,6 +17,7 @@ export const SOUND_ENVIRONMENT_VOLUME = 'SOUND_ENVIRONMENT_VOLUME';
 export const SHOW_MENU = 'SHOW_MENU';
 export const SOUND_ALERT = 'SOUND_ALERT';
 export const SET_CHARACTER = 'SER_CHARACTER';
+export const SHOW_AGAIN_SOUND_ALERT = 'SHOW_AGAIN_SOUND_ALERT';
 
 export const LIST_IMAGES = [
     {

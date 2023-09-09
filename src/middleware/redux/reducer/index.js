@@ -1,6 +1,8 @@
 import { ENTER } from '../../../app/components/Utils/Constants/const';
-import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION } from '../../misc/consts';
+import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION, SHOW_AGAIN_SOUND_ALERT } from '../../misc/consts';
 import { messages } from '../../misc/messages';
+
+const showAgainSoundAlert = localStorage.getItem('showAgainSoundAlert');
 
 const initialState = {
     tales: [],
@@ -36,16 +38,20 @@ const initialState = {
         },
     },
     menu: {
-        showMenu: false,
+        showMenu: !JSON.parse(showAgainSoundAlert),
         typeMenu: ''
     },
     soundAlert: {
-        showSoundAlert: true
+        showSoundAlert: JSON.parse(showAgainSoundAlert)?? true
     }
 }
 
 export default function rootReducer(state = initialState, action){
     switch (action.type) {
+        case SHOW_AGAIN_SOUND_ALERT:
+            return {
+                ...state
+            }
         case SERVER_CONNECTION:
             return {
                 ...state,

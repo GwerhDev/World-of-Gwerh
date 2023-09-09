@@ -1,4 +1,4 @@
-import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION } from '../../misc/consts';
+import { GET_TALES, GET_ACCOUNT, GET_ADVENTURES, PRELOADER_STATE, PRELOADER, SET_PAGE, LOGIN, SOUND_MUSIC, SHOW_MENU, SOUND_ALERT, SOUND_MUSIC_VOLUME, SOUND_BUTTONS, SOUND_BUTTONS_VOLUME, SET_CHARACTER, SERVER_CONNECTION, SHOW_AGAIN_SOUND_ALERT } from '../../misc/consts';
 import { URL_API } from '../../config';
 import { messages } from '../../misc/messages';
 
@@ -90,6 +90,14 @@ export function setSoundALertStates(showSoundAlert) {
     return {
         type: SOUND_ALERT,
         payload: { showSoundAlert }
+    }
+}
+
+export function setShowAgainSoundALert(showAgain) {
+    localStorage.setItem('showAgainSoundAlert', showAgain);
+    return {
+        type: SHOW_AGAIN_SOUND_ALERT,
+        payload: showAgain
     }
 }
 
