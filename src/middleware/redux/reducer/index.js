@@ -38,7 +38,7 @@ const initialState = {
         },
     },
     menu: {
-        showMenu: !JSON.parse(showAgainSoundAlert),
+        showMenu: !JSON.parse(showAgainSoundAlert)?? false,
         typeMenu: ''
     },
     soundAlert: {
