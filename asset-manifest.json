@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3c068562.css",
-    "main.js": "/static/js/main.1a4d245f.js",
+    "main.css": "/static/css/main.ab1e1fbe.css",
+    "main.js": "/static/js/main.fbf09991.js",
     "static/js/787.dab6a6fc.chunk.js": "/static/js/787.dab6a6fc.chunk.js",
     "static/media/background.png": "/static/media/background.0d29dc72113278745b1c.png",
     "static/media/background-div-enter.png": "/static/media/background-div-enter.aeabbcfad680f9c7d58a.png",
@@ -11,6 +11,7 @@
     "static/media/icon-quest.png": "/static/media/icon-quest.1bc061a6a41b8b75e4d8.png",
     "static/media/background-gwerh.png": "/static/media/background-gwerh.19f3f31154a0382cf252.png",
     "static/media/icon-tales.png": "/static/media/icon-tales.c32481de55acd48a2c34.png",
+    "static/media/cont-bg.png": "/static/media/cont-bg.f0f58a46692ef7792bc1.png",
     "static/media/WoG-Icon.png": "/static/media/WoG-Icon.57df0728f608db0e9740.png",
     "static/media/title.png": "/static/media/title.c20f57ada5c6a5f1fe13.png",
     "static/media/icon-contact.png": "/static/media/icon-contact.398353d1659ce3f89e95.png",
@@ -30,12 +31,12 @@
     "static/media/btn-entrar-hover.png": "/static/media/btn-entrar-hover.3fdb402c68d93814bd2e.png",
     "static/media/btn-hover.mp3": "/static/media/btn-hover.955bf1a016431a718aa2.mp3",
     "index.html": "/index.html",
-    "main.3c068562.css.map": "/static/css/main.3c068562.css.map",
-    "main.1a4d245f.js.map": "/static/js/main.1a4d245f.js.map",
+    "main.ab1e1fbe.css.map": "/static/css/main.ab1e1fbe.css.map",
+    "main.fbf09991.js.map": "/static/js/main.fbf09991.js.map",
     "787.dab6a6fc.chunk.js.map": "/static/js/787.dab6a6fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c068562.css",
-    "static/js/main.1a4d245f.js"
+    "static/css/main.ab1e1fbe.css",
+    "static/js/main.fbf09991.js"
   ]
 }
