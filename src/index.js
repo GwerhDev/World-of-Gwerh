@@ -6,14 +6,14 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './tests/reportWebVitals';
 import store from './middleware/redux/store';
 import { Provider } from 'react-redux';
-import { HashRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <HashRouter>
+    <BrowserRouter>
       <Router/>
-    </HashRouter>
+    </BrowserRouter>
   </Provider>
 );
 
